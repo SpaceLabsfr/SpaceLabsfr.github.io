@@ -100,7 +100,7 @@
             min-width: 300px;
             padding: 10px 40px;
             margin-top: 7px;
-            background: rgba(10, 10, 10, 0.5);
+            background: rgba(0, 0, 0, 0.2);
             border-color: transparent;
         }
 
@@ -120,7 +120,8 @@
 
         strong {
             color: rgba(0, 118, 255);
-            font-weight: normal;
+            font-size: inherit;
+            font-style: normal;
         }
 
         .socials {
@@ -138,11 +139,11 @@
         }
 
         .socialsdiv {
-            width: 0%;
-            float: left;
+            display: flex;
+            justify-content: center;
         }
 
-        .socialdivlayout {
+        .menudivlayout {
             display: flex;
             justify-content: left;
             padding: 50px 0;
@@ -167,6 +168,7 @@
         .solutioncontent {
             float: left;
             padding: 0px 50px 0;
+            max-width: 650px;
         }
 
         .solutioncontenttitle {
@@ -182,6 +184,13 @@
 
         .spacer {
             padding: 120px 0;
+        }
+
+        .maintitle {
+            color: white;
+            font-size: 22px;
+            font-weight: normal;
+            text-align: center;
         }
 
         @media only screen and (max-width:1150px) {
@@ -223,7 +232,7 @@
                 padding: 0 20px;
             }
 
-            .socialdivlayout {
+            .menudivlayout {
                 display: block;
                 justify-content: center;
                 transform: translateY(0);
@@ -291,17 +300,25 @@
                     <a href="index.html" style="color:transparent;"><img src="img/SpaceLabsHQ/SpaceLabs-FondSombre.png" style="width:160px; cursor: pointer;" /></a>
                 </div>
 
-                <div class="socialdivlayout">
-                    <button>Pour l'industrie</button>
-                    <button>Nos partenaires</button>
-                    <button>Nous rejoindre</button>
-                    <button>Qui sommes-nous ?</button>
+                <div class="menudivlayout">
+                    <button onclick="window.location='pourleducation.html'" style="cursor: pointer;">Pour l'éducation</button>
+                    <button onclick="window.location='notfound.html'" style="cursor: pointer;">Nos partenaires</button>
+                    <button onclick="window.location='notfound.html'" style="cursor: pointer;">Nous rejoindre</button>
+                    <button onclick="window.location='lequipespacelabs.html'" style="cursor: pointer;">Qui sommes-nous ?</button>
 
                 </div>
 
             </div>
 
-            <div class="spacer"></div>
+            <div>
+                <h1 class="maintitle">Nos solutions pour <strong>l'industrie</strong></h1>
+                <div style=" display: flex; justify-content: center; transform:translateY(-15px)">
+                    <div class="underline"></div>
+                </div>
+            </div>
+
+
+            <div class="spacer" style="padding: 30px 0;"></div>
 
             <div style="overflow:auto; display: flex; justify-content: center;" class="section">
 
@@ -309,14 +326,13 @@
                     <div>
                         <img class="contentimg" src="img/Flaticon/project-management.png" style="width:50px; " />
                     </div>
-                    <h2 class="title">Voulez-vous offrir à vos élèves une <em>expérience unique</em> ?</h2>
+                    <h2 class="title">Des <em>besoins</em> mais pas le <em>temps</em> ?</h2>
                     <div style=" display: flex; justify-content: center; transform:translateY(-15px)">
                         <div class="underline"></div>
                     </div>
                     <div class="sectioncontent">
                         <p style="padding: 20px">
-                            Grâce a ses nombreux <em>robots</em>, nous pouvons vous permettre d'offrir une expérience ludique à vos élèves en proposant des <em>initiations</em> à la robotique ! <br /><br />
-                            Ces travaux pratiques d'introduction à la programmation et à la robotique sont adaptés aux classes du <em>CP</em> à la <em>troisième</em> et sont <em>gratuits*</em>.
+                            Vous pouvez nous confier vos projets en <em>informatique</em>, <em>électronique</em> et <em>robotique</em> pour permettre à des <em>jeunes</em> de la région de <em>travailler</em> sur des projets concrets.<br /><br />
                         </p>
                     </div>
                 </div>
@@ -331,15 +347,15 @@
                 <div class="solutioncontent">
                     <div>
                         <img src="img/Flaticon/LogoProgramming.png" style="width:50px; float:left; transform: translateY(23px);" />
-                        <h2 class="solutioncontenttitle">Programmation</h2>
+                        <h2 class="solutioncontenttitle">Développement de <strong>logiciels</strong></h2>
                     </div>
                     <div style="max-width:700px;float:left; font-weight: lighter;">
                         <p>
-                            Notre équipe a envie de partager sa passion pour la programmation
-                            et propose des introductions à la logique ou à des langages comme
-                            le C ou le Python.<br /><br />
-                            N'hésitez pas à nous contacter, nous avons forcément une solution pour
-                            transformer vos idées en projet !
+                            Notre équipe passionnée <strong>d'apprentis ingénieurs</strong>, programmant dans <strong>l'industrie</strong>
+                            peut répondre à vos besoins d’applications <strong>web</strong>, <strong>clients</strong>, <strong>serveurs</strong>,
+                            <strong>multiplateformes</strong> et bien d’autres.
+
+                            C, C++, C#, PHP, Python, Java, HTML, CSS, Javascript
                         </p>
                     </div>
                 </div>
@@ -351,15 +367,11 @@
                 <div class="solutioncontent">
                     <div>
                         <img src="img/Flaticon/LogoRobotique.png" style="width:50px; float:left; transform: translateY(23px);" />
-                        <h2 class="solutioncontenttitle">Robotique</h2>
+                        <h2 class="solutioncontenttitle"><strong>Robotique</strong> et <strong>électronique</strong></h2>
                     </div>
                     <div style="max-width:700px;float:left; font-weight: lighter;">
                         <p>
-                            Le plus tôt vos élèves découvriront la programmation, le plus des chances
-                            de réussir vous leurs offrez, dans un monde ou la technologie est plus
-                            qu'un simple hobby, c'est une nécessité pour l'avenir.<br /><br />
-                            Grâce à nos robots éducatifs, vous pouvons offrir à vos élève une
-                            expérience ludique et nourrissante.
+                            Nous pouvons répondre à vos besoins en <strong>robotique industrielle</strong> et en <strong>électronique</strong>.
 
                         </p>
                     </div>
@@ -372,14 +384,13 @@
                 <div class="solutioncontent">
                     <div>
                         <img src="img/Flaticon/LogoElec.png" style="width:50px; float:left; transform: translateY(23px);" />
-                        <h2 class="solutioncontenttitle">Électronique</h2>
+                        <h2 class="solutioncontenttitle" style="font-size:20px; padding: 15px 30px 0;"><strong>Contribuez</strong> à <strong>l'avenir</strong> des <strong>enfants</strong> de votre région</h2>
                     </div>
                     <div style="max-width:700px;float:left; font-weight: lighter;">
                         <p>
-                            Que serait la technologie sans l'électronique pour la faire fonctionner ? <br /><br />
-                            Nous pouvons vous aider à réaliser vos projets électroniques innovants
-                            pour compléter votre catalogue d'outils pédagogiques ou de matériel
-                            d'apprentissage.
+                            Vous pouvez permettre à des <strong>enfants</strong> d'apprendre la <strong>programmation</strong>
+                            et la <strong>robotique</strong> grâce à des travaux pratiques sur le <strong>thème</strong> de votre
+                            <strong>entreprise</strong>.
                         </p>
                     </div>
                 </div>
@@ -387,11 +398,30 @@
 
             <div class="spacer"></div>
 
+            <div class="socialsdiv">
+                <div class="socialdivlayout">
+                    <div>
+                        <button onclick="window.location='notfound.html'" style="cursor: pointer;" class="socials">
+                            <img src="img/Socials/Instagram.png" class="socialsimg" />
+                        </button>
+                        <button onclick="window.location='notfound.html'" style="cursor: pointer;" class="socials">
+                            <img src="img/Socials/Linkedin.png" class="socialsimg" />
+                        </button>
+                        <button onclick="window.location='notfound.html'" style="cursor: pointer;" class="socials">
+                            <img src="img/Socials/Twitter.png" class="socialsimg" />
+                        </button>
+                        <button onclick="window.location='notfound.html'" style="cursor: pointer;" class="socials">
+                            <img src="img/Socials/Youtube.png" class="socialsimg" />
+                        </button>
+                    </div>
+
+                </div>
+            </div>
             <div style=" display: flex; justify-content: center;">
                 <div class="section" style="overflow:auto;padding:15px; ">
                     <div class="join" style="width:350px">
                         <h2 class="title" style="font-size: medium; padding:15px">Participez à l'expérience SpaceLabs !</h2>
-                        <button>Nous rejoindre</button>
+                        <button onclick="window.location='notfound.html'" style="cursor: pointer;">Nous rejoindre</button>
                     </div>
 
                 </div>
