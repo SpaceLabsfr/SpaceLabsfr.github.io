@@ -1,0 +1,219 @@
+body {
+    background-image: url('img/Unsplash/GenericBackground.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+p {
+    color: white;
+}
+
+.underline {
+    border-bottom: solid;
+    border-bottom-color: white;
+    border-bottom-width: 1.5px;
+    width: 300px;
+}
+
+.sectioncontent {
+    float: left;
+    width: 100%;
+    padding: 0 20px;
+    overflow: hidden;
+    color: white;
+    text-align: left;
+    background-color: transparent;
+    font-weight: 300;
+    border-radius: 45px;
+    border-color: transparent;
+}
+
+.spacelabsmainlogo {
+    width: 20%;
+    max-width: 600px;
+    float: left;
+    text-align: center;
+    color: white;
+    padding: 0px;
+}
+
+.big {
+    float: left;
+    width: 70%;
+    max-width: 1000px;
+    min-width: 300px;
+    padding: 10px 40px;
+    margin-top: 7px;
+    background: rgba(0, 0, 0, 0.2);
+    border-color: transparent;
+}
+
+.section {
+    padding: 0 40px 0 40px;
+}
+
+img {}
+
+.contentimg {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    border-radius: 30px;
+}
+
+strong {
+    color: rgba(0, 118, 255);
+    font-size: inherit;
+    font-style: normal;
+}
+
+.socialsdiv {
+    display: flex;
+    justify-content: center;
+}
+
+.socialdivlayout {
+    display: flex;
+    justify-content: center;
+}
+
+.menudivlayout {
+    display: flex;
+    justify-content: left;
+    padding: 50px 0;
+}
+
+em {
+    color: rgba(18 192 48);
+    font-style: normal;
+    font-size: inherit;
+}
+
+.solutionsdiv {
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    background: rgba(10, 10, 10, 0.9);
+    max-width: 1200px;
+    padding: 40px;
+    border-radius: 30px;
+}
+
+.solutioncontent {
+    float: left;
+    padding: 0px 50px 0;
+    max-width: 650px;
+}
+
+.solutioncontenttitle {
+    float: left;
+    color: white;
+    padding: 0px 30px 0;
+    font-size: 30px;
+}
+
+.contentimgdiv {
+    width: 40%;
+}
+
+.spacer {
+    padding: 120px 0;
+}
+
+.maintitle {
+    color: white;
+    font-size: 22px;
+    font-weight: normal;
+    text-align: center;
+}
+
+@media only screen and (max-width:1150px) {
+    .contentimg {
+        transform: translateY(20%);
+    }
+}
+
+@media only screen and (max-width:990px) {
+    /* For tablets: */
+    .left {
+        width: 100%;
+    }
+    * {
+        font-size: 17px;
+    }
+    .right {
+        width: 100%;
+        transform: translateX(0px);
+    }
+    .phrase,
+    .join,
+    .big {
+        width: 100%;
+    }
+    .spacelabsmainlogo {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .phrase {
+        transform: translateY(-20px);
+    }
+    .section {
+        padding: 0 20px;
+    }
+    .menudivlayout {
+        display: block;
+        justify-content: center;
+        transform: translateY(0);
+        padding: 160px 0px 0px 0;
+    }
+    .contentimg {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        transform: translateY(0);
+    }
+    .solutionsdiv {
+        display: block;
+        justify-content: center;
+        transform: translateY(0);
+        padding: 130px 0;
+        padding: 0px;
+    }
+    .contentimgdiv {
+        display: block;
+        justify-content: center;
+        transform: translateY(0);
+        width: 100%;
+        padding: 50px;
+    }
+    .spacer {
+        padding: 30px 0;
+    }
+}
+
+@media only screen and (max-width:500px) {
+    /* For mobile phones: */
+    .menu,
+    .main,
+    .phrase,
+    .title,
+    .spacelabsmainlogo,
+    .join,
+    .big,
+    .socialsdiv {
+        width: 100%;
+    }
+    * {
+        font-size: 17px;
+    }
+    .right {
+        width: 100%;
+    }
+    .phrase {
+        padding: 20px;
+    }
+    .section {
+        padding: 0 20px;
+    }
+}

@@ -1,296 +1,12 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        * {
-            box-sizing: border-box;
-            font-family: Dubai, Helvetica, Arial, sans-serif;
-            font-size: 18px;
-        }
-
-        p {
-            color: white;
-        }
-
-        body {
-            background-image: url('img/Unsplash/GenericBackground.jpg');
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-
-        .left {
-            float: left;
-            width: 60%;
-            max-width: 1300px;
-            padding: 0 30px;
-            overflow: hidden;
-            color: white;
-            background: rgba(20, 20, 20, 0.8);
-            border-radius: 45px;
-            border-color: transparent;
-        }
-
-        .underline {
-            border-bottom: solid;
-            border-bottom-color: white;
-            border-bottom-width: 1.5px;
-            width: 300px;
-        }
-
-        .title {
-            color: white;
-            text-align: center;
-            font-weight: normal;
-            font-size: 20px;
-        }
-
-        .sectioncontent {
-            float: left;
-            width: 100%;
-            padding: 0 20px;
-            overflow: hidden;
-            color: white;
-            text-align: left;
-            background-color: transparent;
-            font-weight: 300;
-            border-radius: 45px;
-            border-color: transparent;
-        }
-
-        .spacelabsmainlogo {
-            width: 20%;
-            max-width: 600px;
-            float: left;
-            text-align: center;
-            color: white;
-            padding: 0px;
-        }
-
-        button {
-            color: white;
-            background: rgba(0, 118, 255);
-            text-align: center;
-            margin: auto;
-            display: block;
-            border-radius: 85px;
-            border-color: transparent;
-            width: 200px;
-            height: 36px;
-            transform: translateY(-17px);
-            padding: 0 20px;
-        }
-
-        .join {
-            background: rgba(20, 20, 20, 0.8);
-            float: left;
-            width: 30%;
-            max-width: 380px;
-            min-width: 240px;
-            overflow: hidden;
-            border-radius: 45px;
-            padding: 0 20px;
-            border-color: transparent;
-        }
-
-        .big {
-            float: left;
-            width: 70%;
-            max-width: 1000px;
-            min-width: 300px;
-            padding: 10px 40px;
-            margin-top: 7px;
-            background: rgba(0, 0, 0, 0.2);
-            border-color: transparent;
-        }
-
-        .section {
-            padding: 0 40px 0 40px;
-        }
-
-        img {
-        }
-
-        .contentimg {
-            width: 50%;
-            display: flex;
-            justify-content: center;
-            border-radius: 30px;
-        }
-
-        strong {
-            color: rgba(0, 118, 255);
-            font-size: inherit;
-            font-style: normal;
-        }
-
-        .socials {
-            background-color: transparent;
-            width: 20px;
-            height: 45px;
-            border-radius: 1000px;
-            float: left;
-        }
-
-        .socialsimg {
-            width: 35px;
-            border-radius: 0;
-            transform: translate3d(-14.5px, 5px, 0px);
-        }
-
-        .socialsdiv {
-            display: flex;
-            justify-content: center;
-        }
-
-        .menudivlayout {
-            display: flex;
-            justify-content: left;
-            padding: 50px 0;
-        }
-
-        em {
-            color: rgba(18 192 48);
-            font-style: normal;
-            font-size: inherit;
-        }
-
-        .solutionsdiv {
-            overflow: auto;
-            display: flex;
-            justify-content: center;
-            background: rgba(10, 10, 10, 0.9);
-            max-width: 1200px;
-            padding: 40px;
-            border-radius: 30px;
-        }
-
-        .solutioncontent {
-            float: left;
-            padding: 0px 50px 0;
-            max-width: 650px;
-        }
-
-        .solutioncontenttitle {
-            float: left;
-            color: white;
-            padding: 0px 30px 0;
-            font-size: 30px;
-        }
-
-        .contentimgdiv {
-            width: 40%;
-        }
-
-        .spacer {
-            padding: 120px 0;
-        }
-
-        .maintitle {
-            color: white;
-            font-size: 22px;
-            font-weight: normal;
-            text-align: center;
-        }
-
-        @media only screen and (max-width:1150px) {
-            .contentimg {
-                transform: translateY(20%);
-            }
-        }
-
-        @media only screen and (max-width:990px) {
-            /* For tablets: */
-            .left {
-                width: 100%;
-            }
-
-            * {
-                font-size: 17px;
-            }
-
-            .right {
-                width: 100%;
-                transform: translateX(0px);
-            }
-
-            .phrase, .join, .big {
-                width: 100%;
-            }
-
-            .spacelabsmainlogo {
-                width: 100%;
-                display: flex;
-                justify-content: center;
-            }
-
-            .phrase {
-                transform: translateY(-20px);
-            }
-
-            .section {
-                padding: 0 20px;
-            }
-
-            .menudivlayout {
-                display: block;
-                justify-content: center;
-                transform: translateY(0);
-                padding: 160px 0px 0px 0;
-            }
-
-            .contentimg {
-                width: 100%;
-                display: flex;
-                justify-content: center;
-                transform: translateY(0);
-            }
-
-            .solutionsdiv {
-                display: block;
-                justify-content: center;
-                transform: translateY(0);
-                padding: 130px 0;
-                padding: 0px;
-            }
-
-            .contentimgdiv {
-                display: block;
-                justify-content: center;
-                transform: translateY(0);
-                width: 100%;
-                padding: 50px;
-            }
-
-            .spacer {
-                padding: 30px 0;
-            }
-        }
-
-        @media only screen and (max-width:500px) {
-            /* For mobile phones: */
-            .menu, .main, .phrase, .title, .spacelabsmainlogo, .join, .big, .socialsdiv {
-                width: 100%;
-            }
-
-            * {
-                font-size: 17px;
-            }
-
-            .right {
-                width: 100%;
-            }
-
-            .phrase {
-                padding: 20px;
-            }
-
-            .section {
-                padding: 0 20px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="common.css">
+    <link rel="stylesheet" type="text/css" href="content.css">
 </head>
+
 <body>
 
     <div style=" display: flex; justify-content: center;">
@@ -351,11 +67,8 @@
                     </div>
                     <div style="max-width:700px;float:left; font-weight: lighter;">
                         <p>
-                            Notre équipe passionnée <strong>d'apprentis ingénieurs</strong>, programmant dans <strong>l'industrie</strong>
-                            peut répondre à vos besoins d’applications <strong>web</strong>, <strong>clients</strong>, <strong>serveurs</strong>,
-                            <strong>multiplateformes</strong> et bien d’autres.
-
-                            C, C++, C#, PHP, Python, Java, HTML, CSS, Javascript
+                            Notre équipe passionnée <strong>d'apprentis ingénieurs</strong>, programmant dans <strong>l'industrie</strong> peut répondre à vos besoins d’applications <strong>web</strong>, <strong>clients</strong>, <strong>serveurs</strong>,
+                            <strong>multiplateformes</strong> et bien d’autres. C, C++, C#, PHP, Python, Java, HTML, CSS, Javascript
                         </p>
                     </div>
                 </div>
@@ -388,8 +101,7 @@
                     </div>
                     <div style="max-width:700px;float:left; font-weight: lighter;">
                         <p>
-                            Vous pouvez permettre à des <strong>enfants</strong> d'apprendre la <strong>programmation</strong>
-                            et la <strong>robotique</strong> grâce à des travaux pratiques sur le <strong>thème</strong> de votre
+                            Vous pouvez permettre à des <strong>enfants</strong> d'apprendre la <strong>programmation</strong> et la <strong>robotique</strong> grâce à des travaux pratiques sur le <strong>thème</strong> de votre
                             <strong>entreprise</strong>.
                         </p>
                     </div>
@@ -431,4 +143,5 @@
 
 
 </body>
+
 </html>

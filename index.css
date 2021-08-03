@@ -1,0 +1,180 @@
+body {
+    background-image: url('img/Unsplash/Dark20_joel-filipe-QwoNAhbmLLo-unsplash.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+p {
+    padding: 20px;
+}
+
+.underline {
+    border-bottom: solid;
+    border-bottom-color: white;
+    border-bottom-width: 1.5px;
+    width: 180px;
+}
+
+.sectioncontent {
+    float: left;
+    width: 100%;
+    padding: 0 20px;
+    overflow: hidden;
+    color: black;
+    text-align: left;
+    background-color: white;
+    font-weight: 300;
+    border-radius: 45px;
+    border-color: transparent;
+}
+
+.spacelabsmainlogo {
+    width: 33%;
+    max-width: 600px;
+    float: left;
+    text-align: center;
+    color: white;
+    padding: 50px;
+}
+
+.big {
+    float: left;
+    width: 60%;
+    max-width: 900px;
+    min-width: 300px;
+    padding: 10px 40px;
+    margin-top: 7px;
+    background: rgba(20, 20, 20, 0.8);
+    border-radius: 45px;
+    border-color: transparent;
+}
+
+.section {
+    padding: 0 40px 0 40px;
+}
+
+img {
+    border-radius: 15px;
+}
+
+.contentimg {
+    transform: translateY(10px);
+    padding: 10px;
+    width: 35%;
+}
+
+h1 {
+    font-size: 29px;
+}
+
+strong {
+    color: rgba(0, 118, 255);
+    font-weight: normal;
+    font-size: 29px;
+}
+
+.socialsdiv {
+    width: 33%;
+    float: left;
+}
+
+.socialdivlayout {
+    display: flex;
+    justify-content: center;
+    transform: translateY(110px);
+}
+
+.right {
+    float: left;
+    width: 40%;
+    max-width: 1300px;
+    min-width: 300px;
+    padding: 10px 30px;
+    margin-top: 7px;
+    background: rgba(20, 20, 20, 0.8);
+    border-radius: 45px;
+    border-color: transparent;
+    transform: translateX(40px);
+}
+
+.phrase {
+    width: 33%;
+    float: left;
+    text-align: center;
+    color: white;
+    font-weight: normal;
+    transform: translateY(90px);
+}
+
+@media only screen and (max-width:990px) {
+    /* For tablets: */
+    .left {
+        width: 100%;
+    }
+    * {
+        font-size: 17px;
+    }
+    .right {
+        width: 100%;
+        transform: translateX(0px);
+    }
+    .phrase,
+    .join,
+    .big,
+    .socialsdiv {
+        width: 100%;
+    }
+    .spacelabsmainlogo {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .phrase {
+        transform: translateY(-20px);
+    }
+    .section {
+        padding: 0 20px;
+    }
+    .socialdivlayout {
+        display: flex;
+        justify-content: center;
+        transform: translateY(0);
+    }
+    .contentimg {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        transform: translateY(0);
+    }
+}
+
+@media only screen and (max-width:500px) {
+    /* For mobile phones: */
+    .menu,
+    .main,
+    .phrase,
+    .title,
+    .spacelabsmainlogo,
+    .join,
+    .big,
+    .socialsdiv {
+        width: 100%;
+    }
+    * {
+        font-size: 17px;
+    }
+    .right {
+        width: 100%;
+    }
+    .phrase {
+        padding: 20px;
+    }
+    .section {
+        padding: 0 20px;
+    }
+    .socialdivlayout {
+        display: flex;
+        justify-content: center;
+        transform: translateY(0);
+    }
+}

@@ -1,262 +1,22 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        * {
-            box-sizing: border-box;
-            font-family: Dubai, Helvetica, Arial, sans-serif;
-            font-size: 18px;
-        }
-
-        p {
-            padding: 20px;
-        }
-
-        body {
-            background-image: url('img/Unsplash/Dark20_joel-filipe-QwoNAhbmLLo-unsplash.jpg');
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-
-        .left {
-            float: left;
-            width: 60%;
-            max-width: 1300px;
-            padding: 0 30px;
-            overflow: hidden;
-            color: white;
-            background: rgba(20, 20, 20, 0.8);
-            border-radius: 45px;
-            border-color: transparent;
-        }
-
-        .underline {
-            border-bottom: solid;
-            border-bottom-color: white;
-            border-bottom-width: 1.5px;
-            width: 180px;
-        }
-
-        .title {
-            color: white;
-            text-align: center;
-            font-weight: normal;
-        }
-
-        .sectioncontent {
-            float: left;
-            width: 100%;
-            padding: 0 20px;
-            overflow: hidden;
-            color: black;
-            text-align: left;
-            background-color: white;
-            font-weight: 300;
-            border-radius: 45px;
-            border-color: transparent;
-        }
-
-        .right {
-            float: left;
-            width: 40%;
-            max-width: 1300px;
-            min-width: 300px;
-            padding: 10px 30px;
-            margin-top: 7px;
-            background: rgba(20, 20, 20, 0.8);
-            border-radius: 45px;
-            border-color: transparent;
-            transform: translateX(40px);
-        }
-
-        .phrase {
-            width: 33%;
-            float: left;
-            text-align: center;
-            color: white;
-            font-weight: normal;
-            transform: translateY(90px);
-        }
-
-        .spacelabsmainlogo {
-            width: 33%;
-            max-width: 600px;
-            float: left;
-            text-align: center;
-            color: white;
-            padding: 50px;
-        }
-
-        button {
-            color: white;
-            background: rgba(0, 118, 255);
-            text-align: center;
-            margin: auto;
-            display: block;
-            border-radius: 85px;
-            border-color: transparent;
-            width: 200px;
-            height: 36px;
-            transform: translateY(-17px);
-            padding: 0 20px;
-        }
-
-        .join {
-            background: rgba(20, 20, 20, 0.8);
-            float: left;
-            width: 30%;
-            max-width: 380px;
-            min-width: 240px;
-            overflow: hidden;
-            border-radius: 45px;
-            padding: 0 20px;
-            border-color: transparent;
-        }
-
-        .big {
-            float: left;
-            width: 60%;
-            max-width: 900px;
-            min-width: 300px;
-            padding: 10px 40px;
-            margin-top: 7px;
-            background: rgba(20, 20, 20, 0.8);
-            border-radius: 45px;
-            border-color: transparent;
-        }
-
-        .section {
-            padding: 0 40px 0 40px;
-        }
-
-        img {
-            border-radius: 15px;
-        }
-
-        .contentimg {
-            transform: translateY(10px);
-            padding: 10px;
-            width: 35%;
-        }
-
-        strong {
-            color: rgba(0, 118, 255);
-            font-weight: normal;
-        }
-
-        .socials {
-            background-color: transparent;
-            width: 20px;
-            height: 45px;
-            border-radius: 1000px;
-            float: left;
-        }
-
-        .socialsimg {
-            width: 35px;
-            border-radius: 0;
-            transform: translate3d(-14.5px, 5px, 0px);
-        }
-
-        .socialsdiv {
-            width: 33%;
-            float: left;
-        }
-
-        .socialdivlayout {
-            display: flex;
-            justify-content: center;
-            transform: translateY(110px);
-        }
-
-        @media only screen and (max-width:990px) {
-            /* For tablets: */
-            .left {
-                width: 100%;
-            }
-
-            * {
-                font-size: 17px;
-            }
-
-            .right {
-                width: 100%;
-                transform: translateX(0px);
-            }
-
-            .phrase, .join, .big, .socialsdiv {
-                width: 100%;
-            }
-
-            .spacelabsmainlogo {
-                width: 100%;
-                display: flex;
-                justify-content: center;
-            }
-
-            .phrase {
-                transform: translateY(-20px);
-            }
-
-            .section {
-                padding: 0 20px;
-            }
-
-            .socialdivlayout {
-                display: flex;
-                justify-content: center;
-                transform: translateY(0);
-            }
-
-            .contentimg {
-                width: 50%;
-                display: flex;
-                justify-content: center;
-                transform: translateY(0);
-            }
-        }
-
-        @media only screen and (max-width:500px) {
-            /* For mobile phones: */
-            .menu, .main, .phrase, .title, .spacelabsmainlogo, .join, .big, .socialsdiv {
-                width: 100%;
-            }
-
-            * {
-                font-size: 17px;
-            }
-
-            .right {
-                width: 100%;
-            }
-
-            .phrase {
-                padding: 20px;
-            }
-
-            .section {
-                padding: 0 20px;
-            }
-
-            .socialdivlayout {
-                display: flex;
-                justify-content: center;
-                transform: translateY(0);
-            }
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="common.css">
+    <link rel="stylesheet" type="text/css" href="index.css">
 </head>
+
 <body>
 
     <div style=" display: flex; justify-content: center;">
         <div>
             <div style="overflow:auto;">
                 <div class="spacelabsmainlogo">
-                    <img class="contentimg" src="img/SpaceLabsHQ/SpaceLabs-FondSombre.png" style="width:230px; height: 135px;"/></a>
+                    <img class="contentimg" src="img/SpaceLabsHQ/SpaceLabs-FondSombre.png" style="width:230px; height: 135px;" /></a>
                 </div>
                 <div class="phrase">
-                    <h2 style="font-weight:lighter;">Solutions numériques pour <strong>l'industrie</strong> et <strong>l'éducation</strong></h2>
+                    <h1 style="font-weight:lighter;">Solutions numériques pour <strong>l'industrie</strong> et <strong>l'éducation</strong></h2>
                 </div>
                 <div class="socialsdiv">
                     <div class="socialdivlayout">
@@ -292,13 +52,8 @@
                         <div class="sectioncontent">
                             <img class="contentimg" src="img/SpaceLabs/IMG_20210602_092055.jpg" align="right">
                             <p>
-                                SpaceLabs, c'est une équipe de 6 apprentis-ingénieurs passionnés
-                                par la technologie et qui souhaite partager ses connaissances
-                                dans l'éducation.<br /><br />
-
-                                Travaillant actuellement dans l'industrie et issus de formations
-                                différentes, nous avons des compétences que nous sommes
-                                de mettre à l'épreuve
+                                SpaceLabs, c'est une équipe de 6 apprentis-ingénieurs passionnés par la technologie et qui souhaite partager ses connaissances dans l'éducation.<br /><br /> Travaillant actuellement dans l'industrie et issus de formations
+                                différentes, nous avons des compétences que nous sommes prêt à mettre à disposition.
                             </p>
                         </div>
                         <button onclick="window.location='lequipespacelabs.html'" style="cursor: pointer;">Qui sommes-nous ?</button>
@@ -316,14 +71,8 @@
                         <div class="sectioncontent">
                             <img class="contentimg" src="img/Unsplash/marilia-castelli-l74VaCZon7I-unsplash.jpg" align="right">
                             <p>
-                                Initialisation à la programmation sur
-                                des vrais robots ! <br /><br />
-
-                                Souhaitez-vous offrir une
-                                expérience enrichissante
-                                et ludique à vos élèves
-                                avec des robots éducatifs adaptés à
-                                chaque niveau ?
+                                Initialisation à la programmation sur des vrais robots ! <br /><br /> Souhaitez-vous offrir une expérience enrichissante et ludique à vos élèves avec des robots éducatifs adaptés à chaque niveau de la primaire jusqu'au
+                                lycée ?
                             </p>
 
                         </div>
@@ -344,13 +93,8 @@
                     <div class="sectioncontent">
                         <img class="contentimg" src="img/Unsplash/thisisengineering-raeng-H4ClLKv3pqw-unsplash.jpg" align="right">
                         <p>
-                            SpaceLabs, c'est une équipe de 6 apprentis-ingénieurs passionnés
-                            par la technologie et qui souhaite partager ses connaissances
-                            dans l'éducation.<br /><br />
-
-                            Travaillant actuellement dans l'industrie et issus de formations
-                            différentes, nous avons des compétences que nous sommes
-                            de mettre à l'épreuve
+                            SpaceLabs, c'est une équipe de 6 apprentis-ingénieurs passionnés par la technologie et qui souhaite partager ses connaissances dans l'éducation.<br /><br /> Travaillant actuellement dans l'industrie et issus de formations différentes,
+                            nous avons des compétences que nous sommes de mettre à l'épreuve
                         </p>
                     </div>
                     <button onclick="window.location='pourlindustrie.html'" style="cursor: pointer;">Pour l'industrie</button>
@@ -361,7 +105,7 @@
                 <div class="section" style="overflow:auto;padding:15px">
                     <div class="join" style="width:350px">
                         <h2 class="title" style="font-size: medium; padding:15px">Participez à l'expérience SpaceLabs !</h2>
-                        <button onclick="window.location='notfound.html'" style="cursor: pointer;">Nous rejoindre</button>
+                        <button onclick="window.location='notfound.html'" style="cursor: pointer;">Nous contacter</button>
                     </div>
 
                 </div>
@@ -371,4 +115,5 @@
 
 
 </body>
+
 </html>
