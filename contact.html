@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="common.css">
+    <link rel="stylesheet" type="text/css" href="content.css">
+</head>
+
+<body onload="selectfunction('vous_etes')">
+    <!-- On applique la fonction au lancement -->
+    <div style=" display: flex; justify-content: center;">
+        <div>
+            <div style="overflow:auto;">
+                <div class="spacelabsmainlogo">
+                    <a href="index.html" style="color:transparent;"><img src="img/SpaceLabsHQ/SpaceLabs-FondSombre.png" style="width:160px; cursor: pointer;" /></a>
+                </div>
+                <div class="menudivlayout">
+                    <button onclick="window.location='pourlindustrie.html'" style="cursor: pointer;">Pour l'industrie</button>
+                    <button onclick="window.location='pourleducation.html'" style="cursor: pointer;">Pour l'éducation</button>
+                    <button onclick="window.location='notfound.html'" style="cursor: pointer;">Nos partenaires</button>
+                    <button onclick="window.location='lequipespacelabs.html'" style="cursor: pointer;">Qui sommes-nous ?</button>
+                </div>
+            </div>
+            <div>
+                <h1 class="maintitle">Nous <strong>contacter</strong></h1>
+                <div style=" display: flex; justify-content: center; transform:translateY(-15px)">
+                    <div class="underline"></div>
+                </div>
+            </div>
+
+
+            <div style="display: flex; justify-content: center;" class="section">
+                <div class="big">
+                    <p class="title">Si nos services vous intéressent, n'hésitez pas à remplir ce <em>formulaire</em>.<br/> Nous vous contacterons dès que possible.</p>
+                    <form style="padding: 10px 60px;" action="mailto:contact@spacelabs.fr" method="post">
+                        <p>Adresse mail : <input type="email" name="mail" /></p>
+                        <p>Vous êtes : <select id="vous_etes" onchange="selectfunction('vous_etes')" style="margin : 10px;" name="vous_etes">
+                            <option selected value="education">Dans l'éducation</option>
+                            <option value="industrie">Dans l'industrie</option>
+                            <option value="particulier">Un particulier</option>
+                        </select></p>
+                        <div id="education" class="optionForm">
+                            <p>Nom de l'école : <input type="text" name="ecole" /></p>
+                            <p>Adresse : <input type="text" name="adresse" /></p>
+                        </div>
+                        <div id="industrie" class="optionForm">
+                            <p>Nom de l'entreprise : <input type="text" name="entreprise" /></p>
+                            <p>Adresse : <input type="text" name="adresse" /></p>
+                        </div>
+                        <div id="particulier" class="optionForm">
+                        </div>
+                        <p>Message :</p>
+                        <textarea style="width : 450px; height: 180px;"></textarea>
+
+                        <p style="text-align:center;"><input type="submit" value="Envoyer" /></p>
+                    </form>
+
+                    <script>
+                        function selectfunction(id) {
+                            // Liste des options de ma liste déroulante
+                            const optionList = document.getElementById(id).options;
+                            const nb_options = document.getElementById(id).options.length;
+
+                            // Mon choix
+                            var getOption = document.getElementById(id).value;
+                            console.log(optionList)
+                            console.log(getOption)
+                            for (i = 0; i < nb_options; i++) {
+                                // Pour chaque option
+                                option = optionList[i].value
+                                    // On compare avec le choix et on applique le style correspondant
+                                if (getOption == option) {
+                                    document.getElementById(option).style.display = "block";
+                                } else {
+                                    document.getElementById(option).style.display = "none";
+                                }
+                            }
+                        }
+                    </script>
+
+                    <!--
+                    <h2 class="title">Vous travaillez dans une <em>industrie</em> ?</h2>
+                    <div style=" display: flex; justify-content: center; transform:translateY(-15px)">
+                        <div class="underline"></div>
+                    </div>
+                    <div class="sectioncontent">
+                        <p style="padding: 20px">
+                            Grâce a ses nombreux <em>robots</em>, nous pouvons vous permettre d'offrir une expérience ludique à vos élèves en proposant des <em>initiations</em> à la robotique ! <br /><br /> Ces travaux pratiques d'introduction à la programmation
+                            et à la robotique sont adaptés aux classes du <em>CP</em> à la <em>troisième</em> et sont <em>gratuits*</em>.
+                        </p>
+                    </div>
+                    -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
