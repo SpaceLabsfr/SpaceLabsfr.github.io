@@ -33,8 +33,11 @@
             <div style="display: flex; justify-content: center;" class="section">
                 <div class="big">
                     <p class="title">Si nos services vous intéressent, n'hésitez pas à remplir ce <em>formulaire</em>.<br/> Nous vous contacterons dès que possible.</p>
-                    <form style="padding: 10px 60px;" action="mailto:contact@spacelabs.fr" method="post">
-                        <p>Adresse mail : <input type="email" name="mail" /></p>
+                    <!--<form style="padding: 10px 60px;" action="mailto:contact@spacelabs.fr" method="post">
+                    -->
+                    <form action="http://formspree.io/v.dre@laposte.net" style="padding: 10px 60px;" method="post">
+
+                        <p>Adresse mail : <input type="email" name="_replyto" /></p>
                         <p>Vous êtes : <select id="vous_etes" onchange="selectfunction('vous_etes')" style="margin : 10px;" name="vous_etes">
                             <option selected value="education">Dans l'éducation</option>
                             <option value="industrie">Dans l'industrie</option>
@@ -51,9 +54,9 @@
                         <div id="particulier" class="optionForm">
                         </div>
                         <p>Message :</p>
-                        <textarea style="width : 450px; height: 180px;"></textarea>
+                        <textarea name="body" style="width : 450px; height: 180px;"></textarea>
 
-                        <p style="text-align:center;"><input type="submit" value="Envoyer" /></p>
+                        <p style="text-align:center;"><input type="submit" value="Send" /></p>
                     </form>
 
                     <script type="text/javascript" src="formulaire.js"></script>
