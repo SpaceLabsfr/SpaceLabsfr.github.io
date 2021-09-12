@@ -1,0 +1,43 @@
+.emplacement {
+    display: inline-block;
+    justify-content: center;
+    border: 2px solid blue;
+    vertical-align: top;
+}
+
+.bloc {
+    border: 2px solid red;
+    width: 160px;
+    height: 80px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+p,
+h1,
+h2,
+h3 {
+    color: wheat;
+}
+
+.delete {
+    position: relative;
+    margin-top: 20px;
+    width: auto;
+    height: 30px;
+    opacity: 0.2;
+    float: right;
+}
+
+.delete:hover {
+    margin-top: 20px;
+    width: auto;
+    height: 30px;
+    opacity: 0.8;
+    float: right;
+}
+
+#action {
+    background-color: rgba(0, 118, 255);
+    width: fit-content;
+}

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="common.css">
+    <link rel="stylesheet" type="text/css" href="content.css">
+    <link rel="stylesheet" type="text/css" href="app_content.css">
+</head>
+
+<!-- Ajout de jQuery -->
+<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+<script src="http://code.jquery.com/jquery.min.js"></script>
+<script src="http://code.jquery.com/ui/1.8.17/jquery-ui.min.js"></script>
+<script src="jquery.ui.touch-punch.min.js"></script>
+
+<body>
+
+    <div class="emplacement" id="origin">
+        <h2 class="maintitle">Application de développement Python en programmation par bloc</h2>
+        <img src="img/Flaticon/001-youtube.png" width="70" height="70" draggable="true" ondragstart="return dragStart(event)" id="11" />
+        <img src="img/Flaticon/002-yelp.png" width="70" height="70" draggable="true" ondragstart="return dragStart(event)" id="12" />
+        <img src="img/Flaticon/003-wordpress.png" width="70" height="70" draggable="true" ondragstart="return dragStart(event)" id="13" />
+        <p id="action" draggable="true" ondragstart="return dragStart(event)" class="14">Démarrer</p>
+        <p id="action" draggable="true" ondragstart="return dragStart(event)" class="15">Tourner à gauche</p>
+        <p id="action" draggable="true" ondragstart="return dragStart(event)" class="16">Avancer</p>
+    </div>
+
+    <div class="emplacement" id="trame">
+        <div class="bloc" id=1 ondragenter="return dragEnter(event)" ondrop="return dragDrop(event)" ondragover="return dragOver(event)">
+            <button class="delete" onclick="reset(1)">X</button>
+        </div>
+        <div class="bloc" id=2 ondragenter="return dragEnter(event)" ondrop="return dragDrop(event)" ondragover="return dragOver(event)">
+            <button class="delete" onclick="reset(2)">X</button>
+        </div>
+        <div class="bloc" id=3 ondragenter="return dragEnter(event)" ondrop="return dragDrop(event)" ondragover="return dragOver(event)">
+            <button class="delete" onclick="reset(3)">X</button>
+        </div>
+        <div class="bloc" id=4 ondragenter="return dragEnter(event)" ondrop="return dragDrop(event)" ondragover="return dragOver(event)">
+            <button class="delete" onclick="reset(4)">X</button>
+        </div>
+    </div>
+
+    <button class="submit" onclick="generate()">Valider</button>
+
+
+
+
+</body>
+
+
+<script type="text/javascript ">
+    function reset(id) {
+        console.log(id);
+        console.log(document.getElementById(id));
+        node = document.getElementById(id);
+        if (node.childNodes[2]) {
+            node.removeChild(node.childNodes[2]);
+            node.removeChild(node.childNodes[2]);
+        }
+    }
+    // Drag & Drop
+
+    function dragStart(ev) {
+        ev.dataTransfer.effectAllowed = 'move';
+        ev.dataTransfer.setData("Text", ev.target.getAttribute('id'));
+        ev.dataTransfer.setData("Origin", ev.target.parentNode.getAttribute('id'))
+        ev.dataTransfer.setDragImage(ev.target, 0, 0);
+        return true;
+    }
+
+    function dragEnter(ev) {
+        event.preventDefault();
+        return true;
+    }
+
+    function dragOver(ev) {
+        return false;
+    }
+
+    function dragDrop(ev) {
+
+        event.preventDefault();
+
+        var src = ev.dataTransfer.getData("Text");
+        var drag_target = $('#' + src)[0]; // jQuery
+        var tempo = document.createElement('span');
+        tempo.className = 'hide';
+
+        var origin_id = ev.dataTransfer.getData("Origin")
+
+        // On empêche de drop si le parent a un élément qui existe déjà!
+        //console.log(ev.target.parentNode.childElementCount)
+        console.log(src)
+        console.log(origin_id)
+        console.log(ev.target.id)
+        console.log("là :" + ev.target.childElementCount)
+        if (ev.target.childElementCount == 1) {
+            var copy = document.getElementById(src).cloneNode(true);
+            copy.id = copy.id + "-copy";
+            // On ne peut plus déplacer un élément copié
+            copy.draggable = false;
+            copy.ondragstart = false;
+
+            // On ne peut plus insérer un nouvel élément ici
+            ev.target.appendChild(copy);
+            console.log("1")
+        } else { // S'il y a déjà un élément, on INVERSE les 2
+            /*    
+            event.target.before(tempo);
+            drag_target.before(event.target)
+            tempo.replaceWith(drag_target)
+            console.log("3")
+            */
+            //document.getElementById(src).appendChild(ev.target.parentNode.children)
+            //ev.target.appendChild(document.getElementById(src));
+        }
+        ev.stopPropagation();
+        return false;
+    }
+
+    function generate() {
+        actions = document.getElementById("trame");
+        console.log(actions)
+        nb_actions = actions.childElementCount;
+        console.log(nb_actions)
+
+        for (i = 0; i < nb_actions; i++) {
+            console.log(actions.childNodes[i].childElementCount);
+            for (j = 0; j < actions.childNodes[i].childElementCount; j++) {
+                console.log(actions.childNodes[i].childNodes[j])
+                if (actions.childNodes[i].childNodes[j].id == "action-copy") {
+                    console.log("réussi")
+                }
+            }
+        }
+    }
+</script>
+
+</html>
