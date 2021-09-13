@@ -7,12 +7,6 @@
     <link rel="stylesheet" type="text/css" href="app_content.css">
 </head>
 
-<!-- Ajout de jQuery -->
-<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
-<script src="http://code.jquery.com/jquery.min.js"></script>
-<script src="http://code.jquery.com/ui/1.8.17/jquery-ui.min.js"></script>
-<script src="jquery.ui.touch-punch.min.js"></script>
-
 <body>
 
     <h2 class="maintitle">Application de développement Python en programmation par bloc</h2>
@@ -94,7 +88,6 @@
         event.preventDefault();
 
         var src = ev.dataTransfer.getData("Text");
-        var drag_target = $('#' + src)[0]; // jQuery
         var tempo = document.createElement('span');
         tempo.className = 'hide';
 
@@ -105,26 +98,14 @@
         console.log(src)
         console.log(origin_id)
         console.log(ev.target.id)
-        console.log("là :" + ev.target.childElementCount)
+        console.log(ev.target.childElementCount)
         if (ev.target.childElementCount == 1) {
             var copy = document.getElementById(src).cloneNode(true);
             copy.id = copy.id + "-copy";
             // On ne peut plus déplacer un élément copié
             copy.draggable = false;
             copy.ondragstart = false;
-
-            // On ne peut plus insérer un nouvel élément ici
             ev.target.appendChild(copy);
-            console.log("1")
-        } else { // S'il y a déjà un élément, on INVERSE les 2
-            /*    
-            event.target.before(tempo);
-            drag_target.before(event.target)
-            tempo.replaceWith(drag_target)
-            console.log("3")
-            */
-            //document.getElementById(src).appendChild(ev.target.parentNode.children)
-            //ev.target.appendChild(document.getElementById(src));
         }
         ev.stopPropagation();
         return false;
