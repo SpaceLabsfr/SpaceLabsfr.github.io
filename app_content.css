@@ -1,4 +1,11 @@
+body {
+    background-image: url('img/Unsplash/GenericBackground.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .emplacement {
+    min-width: 150px;
     display: inline-block;
     justify-content: center;
     border: 2px solid blue;
@@ -13,11 +20,22 @@
     margin-right: auto;
 }
 
+.section {
+    width: 300px;
+    margin: auto;
+    border: gray 2px solid;
+    background-color: rgba(0, 118, 220, 0.1)
+}
+
 p,
 h1,
 h2,
 h3 {
     color: wheat;
+}
+
+.drag {
+    /*border: 2px green solid;*/
 }
 
 .delete {
@@ -37,7 +55,7 @@ h3 {
     float: right;
 }
 
-#action {
+.action {
     background-color: rgba(0, 118, 255);
     width: fit-content;
 }

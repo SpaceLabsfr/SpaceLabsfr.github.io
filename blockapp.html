@@ -4,7 +4,6 @@
 <head>
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="common.css">
-    <link rel="stylesheet" type="text/css" href="content.css">
     <link rel="stylesheet" type="text/css" href="app_content.css">
 </head>
 
@@ -16,14 +15,20 @@
 
 <body>
 
+    <h2 class="maintitle">Application de développement Python en programmation par bloc</h2>
     <div class="emplacement" id="origin">
-        <h2 class="maintitle">Application de développement Python en programmation par bloc</h2>
-        <img src="img/Flaticon/001-youtube.png" width="70" height="70" draggable="true" ondragstart="return dragStart(event)" id="11" />
-        <img src="img/Flaticon/002-yelp.png" width="70" height="70" draggable="true" ondragstart="return dragStart(event)" id="12" />
-        <img src="img/Flaticon/003-wordpress.png" width="70" height="70" draggable="true" ondragstart="return dragStart(event)" id="13" />
-        <p id="action" draggable="true" ondragstart="return dragStart(event)" class="14">Démarrer</p>
-        <p id="action" draggable="true" ondragstart="return dragStart(event)" class="15">Tourner à gauche</p>
-        <p id="action" draggable="true" ondragstart="return dragStart(event)" class="16">Avancer</p>
+        <div id="13" class="drag" draggable="true" ondragstart="return dragStart(event)">
+            <img src="img/Flaticon/001-youtube.png" width="70" height="70" />
+        </div>
+        <div id="14" class="drag" draggable="true" ondragstart="return dragStart(event)">
+            <p class="action">Démarrer</p>
+        </div>
+        <div id="15" class="drag" draggable="true" ondragstart="return dragStart(event)">
+            <p class="action">Tourner à gauche</p>
+        </div>
+        <div id="16" class="drag" draggable="true" ondragstart="return dragStart(event)">
+            <p class="action">Avancer</p>
+        </div>
     </div>
 
     <div class="emplacement" id="trame">
@@ -44,12 +49,17 @@
     <button class="submit" onclick="generate()">Valider</button>
 
 
-
+    <div style="display: flex; justify-content: center;" class="section">
+        <div class="big">
+            <p class="title">Résultats :</p>
+            <p><span id="result">. . .</span></p>
 
 </body>
 
 
 <script type="text/javascript ">
+    // Reset du contenu des emplacements
+
     function reset(id) {
         console.log(id);
         console.log(document.getElementById(id));
@@ -59,6 +69,7 @@
             node.removeChild(node.childNodes[2]);
         }
     }
+
     // Drag & Drop
 
     function dragStart(ev) {
@@ -119,21 +130,52 @@
         return false;
     }
 
-    function generate() {
-        actions = document.getElementById("trame");
-        console.log(actions)
-        nb_actions = actions.childElementCount;
-        console.log(nb_actions)
+    // Génération du code Python selon les actions choisies
 
-        for (i = 0; i < nb_actions; i++) {
-            console.log(actions.childNodes[i].childElementCount);
-            for (j = 0; j < actions.childNodes[i].childElementCount; j++) {
-                console.log(actions.childNodes[i].childNodes[j])
-                if (actions.childNodes[i].childNodes[j].id == "action-copy") {
-                    console.log("réussi")
+    function generate() {
+        actions_list = [] // liste des actions voulues
+        actions = document.getElementById("trame");
+
+        element = document.getElementsByClassName('bloc')
+        console.log(element)
+        console.log("element.length" + element.length)
+        for (var i = 0; i < element.length; i++) {
+            console.log(element[i]) // Liste des actions prises
+
+            children = element[i].childNodes;
+            console.log(children)
+            console.log(children.length)
+            for (var j = 0; j < children.length; j++) {
+                console.log(children[j].className)
+                if (children[j].className == 'drag') {
+                    // Succès si le sous-élément a la class "drag"
+                    actions_list.push(children[j].id) // Alors on a l'action dans l'ID
                 }
             }
         }
+
+        console.log(actions_list);
+
+        output = ""; // Code Python à ressortir
+        for (var i = 0; i < actions_list.length; i++) {
+            console.log(actions_list[i]);
+            switch (actions_list[i]) {
+                case "13-copy":
+                    output += "Logo Youtube<br/>";
+                    break;
+                case "14-copy":
+                    output += "Je démarre<br/>";
+                    break;
+                case "15-copy":
+                    output += "Je tourne à gauche<br/>";
+                    break;
+                case "16-copy":
+                    output += "J'avance<br/>";
+                    break;
+            }
+        }
+
+        document.getElementById("result").innerHTML = output;
     }
 </script>
 
