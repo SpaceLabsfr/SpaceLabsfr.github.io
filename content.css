@@ -54,6 +54,8 @@ p {
 
 textarea {
     resize: none;
+    width: 425px;
+    height: 160px;
 }
 
 img {}
@@ -223,7 +225,8 @@ input[type=submit]:focus {
     .spacelabsmainlogo,
     .join,
     .big,
-    .socialsdiv {
+    .socialsdiv,
+    .section {
         width: 100%;
     }
     * {
@@ -237,5 +240,13 @@ input[type=submit]:focus {
     }
     .section {
         padding: 0 20px;
+    }
+    .section_contact {
+        width: 100%;
+        max-width: 500px;
+    }
+    textarea {
+        width: 280px;
+        height: 120px;
     }
 }
