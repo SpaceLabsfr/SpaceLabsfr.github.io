@@ -41,7 +41,7 @@ p {
     float: left;
     width: 70%;
     max-width: 1000px;
-    min-width: 300px;
+    min-width: 280px;
     padding: 10px 40px;
     margin-top: 7px;
     background: rgba(0, 0, 0, 0.2);
@@ -49,7 +49,11 @@ p {
 }
 
 .section {
-    padding: 0 40px 0 40px;
+    padding: 0 20px 0 20px;
+}
+
+textarea {
+    resize: none;
 }
 
 img {}
@@ -80,7 +84,7 @@ strong {
 .menudivlayout {
     display: flex;
     justify-content: left;
-    padding: 50px 0;
+    padding: 50px 0 10px 0;
 }
 
 em {
@@ -164,7 +168,8 @@ input[type=submit]:focus {
     }
     .phrase,
     .join,
-    .big {
+    .big,
+    .section {
         width: 100%;
     }
     .spacelabsmainlogo {
