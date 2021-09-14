@@ -246,7 +246,7 @@ input[type=submit]:focus {
         max-width: 500px;
     }
     textarea {
-        width: 350px;
+        width: 340px;
         height: 180px;
     }
 }
