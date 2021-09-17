@@ -116,6 +116,7 @@ em {
     color: white;
     padding: 0px 30px 0;
     font-size: 30px;
+    margin-block-end: 0px;
 }
 
 .contentimgdiv {
@@ -170,12 +171,8 @@ input[type=submit]:focus {
     }
     .phrase,
     .join,
-    .big,
-    .section {
+    .big {
         width: 100%;
-    }
-    .join {
-        margin: 0 20% 0 20%;
     }
     .spacelabsmainlogo {
         width: 100%;
@@ -184,9 +181,6 @@ input[type=submit]:focus {
     }
     .phrase {
         transform: translateY(-20px);
-    }
-    .section {
-        padding: 0 20px;
     }
     .menudivlayout {
         display: block;
@@ -238,9 +232,6 @@ input[type=submit]:focus {
     }
     .phrase {
         padding: 20px;
-    }
-    .section {
-        padding: 0 20px;
     }
     .section_contact {
         width: 100%;
