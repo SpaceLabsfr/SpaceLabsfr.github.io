@@ -22,7 +22,23 @@
     font-weight: normal;
 }
 
-button {
+a {
+    color: transparent;
+}
+
+.home {
+    width: 160px;
+    cursor: pointer;
+}
+
+.home:hover {
+    background: rgba(10, 130, 200, 0.1);
+    border-radius: 50px;
+}
+
+button,
+input[type="submit"] {
+    cursor: pointer;
     color: white;
     background: rgba(0, 118, 255);
     text-align: center;
@@ -43,8 +59,6 @@ button:hover {
 
 .join {
     background: rgba(20, 20, 20, 0.8);
-    float: left;
-    width: 30%;
     max-width: 380px;
     min-width: 240px;
     overflow: hidden;

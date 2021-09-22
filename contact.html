@@ -11,17 +11,17 @@
 
 <body onload="selectfunction('vous_etes')">
     <!-- On applique la fonction au lancement -->
-    <div style=" display: flex; justify-content: center;">
+    <div style="justify-content: center;">
         <div>
             <div style="overflow:auto;">
                 <div class="spacelabsmainlogo">
-                    <a href="index.html" style="color:transparent;"><img src="img/SpaceLabsHQ/SpaceLabs-FondSombre.png" style="width:160px; cursor: pointer;" /></a>
+                    <a href="index.html"><img src="img/SpaceLabsHQ/SpaceLabs-FondSombre.png" class="home" /></a>
                 </div>
                 <div class="menudivlayout">
-                    <button onclick="window.location='pourlindustrie.html'" style="cursor: pointer;">Pour l'industrie</button>
-                    <button onclick="window.location='pourleducation.html'" style="cursor: pointer;">Pour l'éducation</button>
-                    <button onclick="window.location='notfound.html'" style="cursor: pointer;">Nos partenaires</button>
-                    <button onclick="window.location='lequipespacelabs.html'" style="cursor: pointer;">Qui sommes-nous ?</button>
+                    <button onclick="window.location='pourlindustrie.html'">Pour l'industrie</button>
+                    <button onclick="window.location='pourleducation.html'">Pour l'éducation</button>
+                    <button onclick="window.location='notfound.html'">Nos partenaires</button>
+                    <button onclick="window.location='lequipespacelabs.html'">Qui sommes-nous ?</button>
                 </div>
             </div>
             <div>
@@ -35,8 +35,7 @@
             <div style="display: flex; justify-content: center;" class="section_contact">
                 <div class="big">
                     <p class="title">Si nos services vous intéressent, <br/>n'hésitez pas à remplir ce <em>formulaire</em>.<br/> Nous vous contacterons dès que possible.</p>
-                    <!--<form style="padding: 10px 60px;" action="mailto:contact@spacelabs.fr" method="post">
-                    -->
+
                     <form action="https://formspree.io/f/xnqlgodg" style="padding: 10px 60px;" method="POST">
 
                         <p>Adresse mail : <input type="email" name="_replyto" /></p>
@@ -60,7 +59,7 @@
 
                         <!-- Personnalisation de la page de validation-->
                         <input type="hidden" name="_next" value="confirm.html">
-                        <p style="text-align:center;"><input type="submit" value="Send" /></p>
+                        <p style="text-align:center;"><input type="submit" value="Envoyer la réponse" /></p>
                     </form>
 
                     <script type="text/javascript" src="formulaire.js"></script>

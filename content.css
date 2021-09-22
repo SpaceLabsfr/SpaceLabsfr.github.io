@@ -49,7 +49,7 @@
     }
     
     .section {
-        padding: 0 20px 0 20px;
+        padding: 0px 20px 0 20px;
     }
     
     textarea {
@@ -62,7 +62,6 @@
     
     .contentimg {
         width: 100%;
-        float: left;
         display: flex;
         justify-content: center;
         border-radius: 30px;
@@ -103,7 +102,6 @@
         background: rgba(10, 10, 10, 0.9);
         max-width: 1200px;
         padding: 40px;
-        border-radius: 30px;
     }
     
     .solutioncontent {
@@ -125,7 +123,7 @@
     }
     
     .spacer {
-        padding: 120px 0;
+        padding: 30px 0;
     }
     
     .maintitle {
@@ -144,9 +142,10 @@
         /*Apparence des boutons*/
         text-align: center;
         background-image: linear-gradient(120deg, #d4fc79, #96e6a1);
+        color: black;
     }
     
-    input[type=submit]:focus {
+    input[type=submit]:hover {
         /*Apparence des boutons*/
         text-align: center;
         background-image: linear-gradient(120deg, #99b459, #569b5f);
@@ -196,7 +195,6 @@
     @media only screen and (max-width:800px) {
         .contentimg {
             height: 80%;
-            float: left;
             min-width: 350px;
             margin: 30px;
         }
