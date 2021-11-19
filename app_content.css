@@ -24,7 +24,9 @@ body {
     width: 300px;
     margin: auto;
     border: gray 2px solid;
-    background-color: rgba(0, 118, 220, 0.1)
+    background-color: rgba(0, 118, 220, 0.1);
+    display: flex;
+    justify-content: center;
 }
 
 p,

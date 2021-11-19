@@ -8,23 +8,25 @@
 </head>
 
 <body>
-
     <h2 class="maintitle">Application de développement Python en programmation par bloc</h2>
+
+    <!-- Affichage des blocks à drag -->
     <div class="emplacement" id="origin">
-        <div id="13" class="drag" draggable="true" ondragstart="return dragStart(event)">
+        <div id="101" class="drag" draggable="true" ondragstart="return dragStart(event)">
             <img src="img/Flaticon/001-youtube.png" width="70" height="70" />
         </div>
-        <div id="14" class="drag" draggable="true" ondragstart="return dragStart(event)">
+        <div id="102" class="drag" draggable="true" ondragstart="return dragStart(event)">
             <p class="action">Démarrer</p>
         </div>
-        <div id="15" class="drag" draggable="true" ondragstart="return dragStart(event)">
+        <div id="103" class="drag" draggable="true" ondragstart="return dragStart(event)">
             <p class="action">Tourner à gauche</p>
         </div>
-        <div id="16" class="drag" draggable="true" ondragstart="return dragStart(event)">
+        <div id="104" class="drag" draggable="true" ondragstart="return dragStart(event)">
             <p class="action">Avancer</p>
         </div>
     </div>
 
+    <!-- Affichage des emplacements de drop -->
     <div class="emplacement" id="trame">
         <div class="bloc" id=1 ondragenter="return dragEnter(event)" ondrop="return dragDrop(event)" ondragover="return dragOver(event)">
             <button class="delete" onclick="reset(1)">X</button>
@@ -43,7 +45,7 @@
     <button class="submit" onclick="generate()">Valider</button>
 
 
-    <div style="display: flex; justify-content: center;" class="section">
+    <div class="section">
         <div class="big">
             <p class="title">Résultats :</p>
             <p><span id="result">. . .</span></p>
@@ -53,7 +55,6 @@
 
 <script type="text/javascript ">
     // Reset du contenu des emplacements
-
     function reset(id) {
         console.log(id);
         console.log(document.getElementById(id));
@@ -95,14 +96,15 @@
 
         // On empêche de drop si le parent a un élément qui existe déjà!
         //console.log(ev.target.parentNode.childElementCount)
-        console.log(src)
-        console.log(origin_id)
-        console.log(ev.target.id)
-        console.log(ev.target.childElementCount)
+        //console.log(src)
+        //console.log(origin_id)
+        //console.log(ev.target.id)
+        //console.log(ev.target.childElementCount)
         if (ev.target.childElementCount == 1) {
             var copy = document.getElementById(src).cloneNode(true);
             copy.id = copy.id + "-copy";
-            // On ne peut plus déplacer un élément copié
+            // On ne peut pas déplacer un élément copié
+            // Donc on rend la copie impossible à drag
             copy.draggable = false;
             copy.ondragstart = false;
             ev.target.appendChild(copy);
@@ -120,43 +122,65 @@
         element = document.getElementsByClassName('bloc')
         console.log(element)
         console.log("element.length" + element.length)
+
         for (var i = 0; i < element.length; i++) {
-            console.log(element[i]) // Liste des actions prises
+            //console.log(element[i]) // Liste des actions prises
 
             children = element[i].childNodes;
-            console.log(children)
-            console.log(children.length)
+            //console.log(children)
+
             for (var j = 0; j < children.length; j++) {
-                console.log(children[j].className)
                 if (children[j].className == 'drag') {
                     // Succès si le sous-élément a la class "drag"
                     actions_list.push(children[j].id) // Alors on a l'action dans l'ID
                 }
             }
         }
-
-        console.log(actions_list);
+        //console.log(actions_list);
 
         output = ""; // Code Python à ressortir
-        for (var i = 0; i < actions_list.length; i++) {
-            console.log(actions_list[i]);
-            switch (actions_list[i]) {
-                case "13-copy":
+        actions_list.forEach(function(element) {
+            switch (element) {
+                case "101-copy":
                     output += "Logo Youtube<br/>";
                     break;
-                case "14-copy":
-                    output += "Je démarre<br/>";
+                case "102-copy":
+                    output += "from jetracer.nvidia_racecar import NvidiaRacecar<br/>car = NvidiaRacecar()<br/>";
                     break;
-                case "15-copy":
-                    output += "Je tourne à gauche<br/>";
+                case "103-copy":
+                    output += "car.steering = 0.3<br/>";
                     break;
-                case "16-copy":
-                    output += "J'avance<br/>";
+                case "104-copy":
+                    output += "voiture.rolls()<br/>";
                     break;
             }
-        }
+        })
 
         document.getElementById("result").innerHTML = output;
+
+        // Update 19/11/2021 : Generation du fichier Python
+
+        output = output.replaceAll("<br>", "\n");
+        output = output.replaceAll("<br/>", "\n");
+        // Génération du téléchargement du fichier projet.py
+        //var codePython = "from jetracer.nvidia_racecar import NvidiaRacecar\n";
+        //codePython += "car = NvidiaRacecar()";
+        var filename = "projet.py";
+        download(filename, output);
+    }
+
+
+    function download(filename, text) {
+        var element = document.createElement('a');
+        element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+        element.setAttribute('download', filename);
+
+        element.style.display = 'none';
+        document.body.appendChild(element);
+
+        element.click();
+
+        document.body.removeChild(element);
     }
 </script>
 
