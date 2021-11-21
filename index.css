@@ -34,7 +34,7 @@ p {
     float: left;
     text-align: center;
     color: white;
-    padding: 50px;
+    padding: 35px;
 }
 
 .big {
@@ -103,7 +103,7 @@ strong {
     text-align: center;
     color: white;
     font-weight: normal;
-    transform: translateY(90px);
+    transform: translateY(60px);
 }
 
 @media only screen and (max-width:990px) {

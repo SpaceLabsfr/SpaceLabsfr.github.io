@@ -39,7 +39,7 @@
     
     .big {
         float: left;
-        width: 70%;
+        width: 80%;
         max-width: 1000px;
         min-width: 280px;
         padding: 10px 40px;
@@ -98,8 +98,8 @@
     .solutionsdiv {
         overflow: auto;
         display: flex;
-        justify-content: center;
-        background: rgba(10, 10, 10, 0.9);
+        /*justify-content: center;*/
+        background: rgba(10, 10, 10, 0.8);
         max-width: 1200px;
         padding: 40px;
     }
