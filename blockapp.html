@@ -12,9 +12,7 @@
 
     <!-- Affichage des blocks à drag -->
     <div class="emplacement" id="origin">
-        <div id="101" class="drag" draggable="true" ondragstart="return dragStart(event)">
-            <img src="img/Flaticon/001-youtube.png" width="70" height="70" />
-        </div>
+
         <div id="102" class="drag" draggable="true" ondragstart="return dragStart(event)">
             <p class="action">Démarrer</p>
         </div>
@@ -23,6 +21,9 @@
         </div>
         <div id="104" class="drag" draggable="true" ondragstart="return dragStart(event)">
             <p class="action">Avancer</p>
+        </div>
+        <div id="105" class="drag" draggable="true" ondragstart="return dragStart(event)">
+            <p class="action">Reculer</p>
         </div>
     </div>
 
@@ -151,7 +152,7 @@
                     output += "car.steering = 0.3<br/>";
                     break;
                 case "104-copy":
-                    output += "voiture.rolls()<br/>";
+                    output += "car.rolls = x<br/>";
                     break;
             }
         })
