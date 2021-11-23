@@ -20,9 +20,12 @@
             <p class="action">Tourner à gauche</p>
         </div>
         <div id="104" class="drag" draggable="true" ondragstart="return dragStart(event)">
-            <p class="action">Avancer</p>
+            <p class="action">Tourner à droite</p>
         </div>
         <div id="105" class="drag" draggable="true" ondragstart="return dragStart(event)">
+            <p class="action">Avancer</p>
+        </div>
+        <div id="106" class="drag" draggable="true" ondragstart="return dragStart(event)">
             <p class="action">Reculer</p>
         </div>
     </div>
@@ -153,7 +156,10 @@
                     output += "car.steering = 0.3<br/>";
                     break;
                 case "104-copy":
-                    output += "car.rolls = x<br/>";
+                    output += "car.steering = -0.3<br/>";
+                    break;
+                case "105-copy":
+                    output += "car.rolls = \"test\"<br/>";
                     break;
             }
         })
