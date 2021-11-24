@@ -98,9 +98,8 @@
     .solutionsdiv {
         overflow: auto;
         display: flex;
-        /*justify-content: center;*/
+        justify-content: center;
         background: rgba(10, 10, 10, 0.8);
-        max-width: 1200px;
         padding: 40px;
     }
     
