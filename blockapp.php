@@ -1,88 +1,87 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="common.css">
     <link rel="stylesheet" type="text/css" href="app_content.css">
 </head>
 
+<?php
+// Définition des paramètres PHP 
+
+$actions = [
+    "Démarrer" => "from jetracer.nvidia_racecar import NvidiaRacecar<br/>car = NvidiaRacecar()",
+    "Avancer" => "",
+    "Tourner à gauche" => "car.sterring = 0.3",
+    "Tourner à droite" => "car.sterring = -0.3",
+    "Reculer" => "",
+];
+
+$nb_emplacements = 5;
+
+$file = '/home/jetson/Desktop/KDesir_Tests/projet.py';
+?>
+
 <body>
     <h2 class="maintitle">Application de développement Python en programmation par bloc</h2>
 
     <!-- Affichage des blocks à drag -->
     <div class="emplacement" id="origin">
-
-        <div id="102" class="drag" draggable="true" ondragstart="return dragStart(event)">
-            <p class="action">Démarrer</p>
+        <?php 
+        $i = 100;
+        foreach($actions as $key => $value){
+            $i++;
+            ?>
+        <div id=<?=$i?> class="drag" draggable="true" ondragstart="return dragStart(event)">
+            <p class="action"><?= $key ?></p>
         </div>
-        <div id="103" class="drag" draggable="true" ondragstart="return dragStart(event)">
-            <p class="action">Tourner à gauche</p>
-        </div>
-        <div id="104" class="drag" draggable="true" ondragstart="return dragStart(event)">
-            <p class="action">Tourner à droite</p>
-        </div>
-        <div id="105" class="drag" draggable="true" ondragstart="return dragStart(event)">
-            <p class="action">Avancer</p>
-        </div>
-        <div id="106" class="drag" draggable="true" ondragstart="return dragStart(event)">
-            <p class="action">Reculer</p>
-        </div>
+        <?php } ?>
     </div>
 
     <!-- Affichage des emplacements de drop -->
     <div class="emplacement" id="trame">
-        <div class="bloc" id=1 ondragenter="return dragEnter(event)" ondrop="return dragDrop(event)" ondragover="return dragOver(event)">
-            <button class="delete" onclick="reset(1)">X</button>
-        </div>
-        <div class="bloc" id=2 ondragenter="return dragEnter(event)" ondrop="return dragDrop(event)" ondragover="return dragOver(event)">
-            <button class="delete" onclick="reset(2)">X</button>
-        </div>
-        <div class="bloc" id=3 ondragenter="return dragEnter(event)" ondrop="return dragDrop(event)" ondragover="return dragOver(event)">
-            <button class="delete" onclick="reset(3)">X</button>
-        </div>
-        <div class="bloc" id=4 ondragenter="return dragEnter(event)" ondrop="return dragDrop(event)" ondragover="return dragOver(event)">
-            <button class="delete" onclick="reset(4)">X</button>
-        </div>
+        <?php
+        for($i = 0; $i < $nb_emplacements; $i++){
+            ?>
+            <div class="bloc" id=<?=$i?> ondragenter="return dragEnter(event)" ondrop="return dragDrop(event)" ondragover="return dragOver(event)">
+                <button class="delete" onclick="reset(<?=$i?>)">X</button>
+            </div>
+        <?php } ?>
     </div>
 
-    <br/><br/><br/>
+    <br/><br/>
     <button class="submit" onclick="generate()">Valider</button>
 
+    <form method="post">
+        <br/><input type="submit" name="sauvegarder" value="Générer le fichier python" >
+    </form>
 
-  
 	<?php 
 		if(isset($_POST["sauvegarder"])) {
-			$file = '/home/jetson/Desktop/KDesir_Tests/projet.py';
+			//$file = '/home/jetson/Desktop/KDesir_Tests/projet.py';
 			$output = $_COOKIE['output'];
-			//echo $output;
             $output = str_replace("<br/>","\n",$output);
             $output = str_replace("<br>","\n",$output);
 			$myfile = fopen($file, "w");
 			fwrite($myfile, $output);
 			fclose($myfile);
 		}
-
 	?>
-    <form method="post">
-        <input type="submit" name="sauvegarder" value="Enregistrer le fichier python" >
-    </form>
-
-
+    
     <div class="section">
         <div class="big">
             <p class="title">Résultats :</p>
             <p><span id="result">. . .</span></p>
         </div>
     </div>
+
 </body>
 
 
-<script type="text/javascript ">
+<script type="text/javascript">
     // Reset du contenu des emplacements
     function reset(id) {
-        console.log(id);
-        console.log(document.getElementById(id));
+        //console.log(document.getElementById(id));
         node = document.getElementById(id);
         if (node.childNodes[2]) {
             node.removeChild(node.childNodes[2]);
@@ -118,7 +117,7 @@
         tempo.className = 'hide';
 
         var origin_id = ev.dataTransfer.getData("Origin")
-
+    
         // On empêche de drop si le parent a un élément qui existe déjà!
         //console.log(ev.target.parentNode.childElementCount)
         //console.log(src)
@@ -129,7 +128,7 @@
             var copy = document.getElementById(src).cloneNode(true);
             copy.id = copy.id + "-copy";
             // On ne peut pas déplacer un élément copié
-            // Donc on rend la copie impossible à drag
+            // Pour cela, on rend la copie impossible à drag
             copy.draggable = false;
             copy.ondragstart = false;
             ev.target.appendChild(copy);
@@ -145,8 +144,8 @@
         actions = document.getElementById("trame");
 
         element = document.getElementsByClassName('bloc')
-        console.log(element)
-        console.log("element.length" + element.length)
+        //console.log(element)
+        //console.log("element.length" + element.length)
 
         for (var i = 0; i < element.length; i++) {
             //console.log(element[i]) // Liste des actions prises
@@ -156,61 +155,31 @@
 
             for (var j = 0; j < children.length; j++) {
                 if (children[j].className == 'drag') {
-                    // Succès si le sous-élément a la class "drag"
-                    actions_list.push(children[j].id) // Alors on a l'action dans l'ID
+                    console.log(children[j].textContent);
+                    //actions_list.push(children[j].id)
+                    text = children[j].textContent;
+                    text = text.trim(); // Retire les premiers et derniers espaces
+                    actions_list.push(text);
                 }
             }
         }
-        //console.log(actions_list);
+
+        var actions = <?php echo json_encode($actions); ?>; // Récupération de la liste des actions possibles en PHP
 
         output = ""; // Code Python à ressortir
+
         actions_list.forEach(function(element) {
-            switch (element) {
-                case "101-copy":
-                    output += "Logo Youtube<br/>";
-                    break;
-                case "102-copy":
-                    output += "from jetracer.nvidia_racecar import NvidiaRacecar<br/>car = NvidiaRacecar()<br/>";
-                    break;
-                case "103-copy":
-                    output += "car.steering = 0.3<br/>";
-                    break;
-                case "104-copy":
-                    output += "car.steering = -0.3<br/>";
-                    break;
-                case "105-copy":
-                    output += "car.rolls = \"test\"<br/>";
-                    break;
-            }
+            // element : texte de l'action choisie
+            // actions[element], équivalent en code Python du texte
+            output += actions[element];
+            output += "<br/>";
         })
 
         document.getElementById("result").innerHTML = output;
 
-        // Update 19/11/2021 : Generation du fichier Python
-
-     //   output = output.replaceAll("<br>", "\n");
-     //   output = output.replaceAll("<br/>", "\n");
-        // Génération du téléchargement du fichier projet.py
-        //var codePython = "from jetracer.nvidia_racecar import NvidiaRacecar\n";
-        //codePython += "car = NvidiaRacecar()";
-        //var filename = "projet.py";
-        //download(filename, output);
-    document.cookie="output="+output.toString();
+        document.cookie="output="+output.toString();
     }
 
-
-    function download(filename, text) {
-        var element = document.createElement('a');
-        element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
-        element.setAttribute('download', filename);
-
-        element.style.display = 'none';
-        document.body.appendChild(element);
-
-        element.click();
-
-        document.body.removeChild(element);
-    }
 </script>
 
 </html>
