@@ -4,6 +4,20 @@
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="common.css">
     <link rel="stylesheet" type="text/css" href="app_content.css">
+
+    <script src='jquery-3.2.1.min.js'></script>
+    <script src='http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.js'></script>
+    <script type="text/javascript">
+
+    var nb_emplacement = 3;
+
+    function addBlock(myId) {
+        $(document).ready(function() {
+            $('#trame').append('<div class="bloc" id=' + myId + ' ondragenter="return dragEnter(event)" ondrop="return dragDrop(event)" ondragover="return dragOver(event)"><button class="delete" onclick="reset(' + myId + ')">X</button></div>');
+        });
+    }
+    </script>
+
 </head>
 
 <?php
@@ -40,13 +54,15 @@ $file = '/home/jetson/Desktop/KDesir_Tests/projet.py';
 
     <!-- Affichage des emplacements de drop -->
     <div class="emplacement" id="trame">
-        <?php
-        for($i = 0; $i < $nb_emplacements; $i++){
-            ?>
-            <div class="bloc" id=<?=$i?> ondragenter="return dragEnter(event)" ondrop="return dragDrop(event)" ondragover="return dragOver(event)">
-                <button class="delete" onclick="reset(<?=$i?>)">X</button>
-            </div>
-        <?php } ?>
+        <!--
+        <div class="bloc" id=2 ondragenter="return dragEnter(event)" ondrop="return dragDrop(event)" ondragover="return dragOver(event)">
+            <button class="delete" onclick="reset(2)">X</button>
+        </div>-->
+        <script type="text/javascript">
+            for (i = 1; i <= nb_emplacement; i++) {
+                addBlock(i);
+            }
+        </script>
     </div>
 
     <br/><br/>
@@ -83,9 +99,14 @@ $file = '/home/jetson/Desktop/KDesir_Tests/projet.py';
     function reset(id) {
         //console.log(document.getElementById(id));
         node = document.getElementById(id);
+        //console.log(node.childNodes[1]);
         if (node.childNodes[2]) {
             node.removeChild(node.childNodes[2]);
             node.removeChild(node.childNodes[2]);
+        } else if (node.childNodes[1]) {
+            node.removeChild(node.childNodes[1]);
+        } else if (id > nb_emplacement) { // Si aucun élément n'existe dans la case (sauf la croix) et que la case a été créé par l'utilisateur
+            document.getElementById(id).parentNode.removeChild(document.getElementById(id));
         }
     }
 
@@ -134,6 +155,12 @@ $file = '/home/jetson/Desktop/KDesir_Tests/projet.py';
             ev.target.appendChild(copy);
         }
         ev.stopPropagation();
+
+        // Ajout d'un nouveau block
+        if (document.getElementById(parseInt(ev.target.id) + 1) == null) {
+            addBlock(parseInt(ev.target.id) + 1);
+        }
+
         return false;
     }
 

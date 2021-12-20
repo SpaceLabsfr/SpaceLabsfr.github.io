@@ -49,6 +49,8 @@ h3 {
     margin: 10px;
     padding: 5px;
     border-radius: 20px;
+    background-color: rgba(0, 118, 255);
+    width: fit-content;
 }
 
 .delete {
@@ -68,7 +70,10 @@ h3 {
     float: right;
 }
 
-.action {
-    background-color: rgba(0, 118, 255);
-    width: fit-content;
+#origin {
+    position: fixed;
+}
+
+#trame {
+    margin-left: 270px;
 }

@@ -6,6 +6,17 @@
     <link rel="stylesheet" type="text/css" href="common.css">
     <link rel="stylesheet" type="text/css" href="app_content.css">
 </head>
+<script src='jquery-3.2.1.min.js'></script>
+<script src='http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.js'></script>
+
+<script type="text/javascript">
+    function addBlock(myId) {
+        $(document).ready(function() {
+            $('#trame').append('<div class="bloc" id=' + myId + ' ondragenter="return dragEnter(event)" ondrop="return dragDrop(event)" ondragover="return dragOver(event)"><button class="delete" onclick="reset(' + myId + ')">X</button></div>');
+        });
+
+    }
+</script>
 
 <body>
     <h2 class="maintitle">Application de développement Python en programmation par bloc</h2>
@@ -32,18 +43,15 @@
 
     <!-- Affichage des emplacements de drop -->
     <div class="emplacement" id="trame">
-        <div class="bloc" id=1 ondragenter="return dragEnter(event)" ondrop="return dragDrop(event)" ondragover="return dragOver(event)">
-            <button class="delete" onclick="reset(1)">X</button>
-        </div>
+        <!--
         <div class="bloc" id=2 ondragenter="return dragEnter(event)" ondrop="return dragDrop(event)" ondragover="return dragOver(event)">
             <button class="delete" onclick="reset(2)">X</button>
-        </div>
-        <div class="bloc" id=3 ondragenter="return dragEnter(event)" ondrop="return dragDrop(event)" ondragover="return dragOver(event)">
-            <button class="delete" onclick="reset(3)">X</button>
-        </div>
-        <div class="bloc" id=4 ondragenter="return dragEnter(event)" ondrop="return dragDrop(event)" ondragover="return dragOver(event)">
-            <button class="delete" onclick="reset(4)">X</button>
-        </div>
+        </div>-->
+        <script type="text/javascript">
+            for (i = 1; i <= 4; i++) {
+                addBlock(i);
+            }
+        </script>
     </div>
 
     <br/><br/><br/>
@@ -61,12 +69,17 @@
 <script type="text/javascript ">
     // Reset du contenu des emplacements
     function reset(id) {
-        console.log(id);
-        console.log(document.getElementById(id));
+        //console.log(id);
+        //console.log(document.getElementById(id));
         node = document.getElementById(id);
+        //console.log(node.childNodes[1]);
         if (node.childNodes[2]) {
             node.removeChild(node.childNodes[2]);
             node.removeChild(node.childNodes[2]);
+        } else if (node.childNodes[1]) {
+            node.removeChild(node.childNodes[1]);
+        } else if (id > 3) { // Si aucun élément n'existe dans la case (sauf la croix) et que ce n'est pas la case 1, 2 ou 3
+            document.getElementById(id).parentNode.removeChild(document.getElementById(id));
         }
     }
 
@@ -101,9 +114,9 @@
 
         // On empêche de drop si le parent a un élément qui existe déjà!
         //console.log(ev.target.parentNode.childElementCount)
-        //console.log(src)
-        //console.log(origin_id)
-        //console.log(ev.target.id)
+        //console.log("src " + src)
+        //console.log("origin_id" + origin_id)
+        //console.log("ev.target.id : " + ev.target.id)
         //console.log(ev.target.childElementCount)
         if (ev.target.childElementCount == 1) {
             var copy = document.getElementById(src).cloneNode(true);
@@ -115,6 +128,12 @@
             ev.target.appendChild(copy);
         }
         ev.stopPropagation();
+
+        // Ajout d'un nouveau block
+        if (document.getElementById(parseInt(ev.target.id) + 1) == null) {
+            addBlock(parseInt(ev.target.id) + 1);
+        }
+
         return false;
     }
 
