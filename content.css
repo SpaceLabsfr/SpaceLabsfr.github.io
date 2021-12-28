@@ -14,7 +14,12 @@
         border-bottom-width: 1.5px;
         width: 300px;
     }
-    
+
+    .video {
+        display:flex;
+        justify-content:center;
+    }
+
     .sectioncontent {
         float: left;
         width: 100%;
