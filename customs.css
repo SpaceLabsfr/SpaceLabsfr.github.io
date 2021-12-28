@@ -1,3 +1,38 @@
+.main {
+    display: flex;
+    justify-content: center;
+}
+
+.header {
+    overflow: hidden;
+}
+
+.underlineDiv {
+    display: flex;
+    justify-content: center;
+    transform: translateY(-15px)
+}
+
+.upSection {
+    overflow: auto;
+}
+
+.downSection {
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.contactUs {
+    display: flex;
+    justify-content: center;
+}
+
+.contactUsTxt {
+    font-size: medium;
+    padding: 15px
+}
+
 body {
     background-image: url('img/Unsplash/Dark20_joel-filipe-QwoNAhbmLLo-unsplash.jpg');
     background-repeat: no-repeat;
@@ -64,7 +99,23 @@ img {
     width: 35%;
 }
 
+    .contentimg.spacelabsLogo {
+        content: url("img/SpaceLabsHQ/SpaceLabs-FondSombre.png");
+        width: 230px;
+        height: 135px;
+    }
 
+    .contentimg.itiiImg {
+        content: url("img/SpaceLabs/IMG_20210602_092055.jpg");
+    }
+
+    .contentimg.robotImg {
+        content: url("img/Unsplash/marilia-castelli-l74VaCZon7I-unsplash.jpg");
+    }
+
+    .contentimg.brasRobot {
+        content: url("img/Unsplash/thisisengineering-raeng-H4ClLKv3pqw-unsplash.jpg");
+    }
 
 h1 {
     font-size: 29px;
@@ -79,6 +130,22 @@ strong {
 .socialsdiv {
     width: 33%;
     float: left;
+}
+
+.socialsimg.instagramImg {
+    content: url("img/Socials/Instagram.png");
+}
+
+.socialsimg.linkedinImg {
+    content: url("img/Socials/Linkedin.png");
+}
+
+.socialsimg.twitterImg {
+    content: url("img/Socials/Twitter.png");
+}
+
+.socialsimg.youtubeImg {
+    content: url("img/Socials/Youtube.png");
 }
 
 .socialdivlayout {
@@ -108,6 +175,10 @@ strong {
     font-weight: normal;
     transform: translateY(60px);
 }
+
+    .phrase.titleSentence {
+        font-weight: lighter;
+    }
 
 @media only screen and (max-width:990px) {
     /* For tablets: */
