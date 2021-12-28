@@ -24,16 +24,21 @@
 // Définition des paramètres PHP 
 
 $actions = [
-    "Démarrer" => "from jetracer.nvidia_racecar import NvidiaRacecar<br/>car = NvidiaRacecar()",
-    "Avancer" => "",
-    "Tourner à gauche" => "car.sterring = 0.3",
-    "Tourner à droite" => "car.sterring = -0.3",
-    "Reculer" => "",
+    "Démarrer" => "from jetracer.nvidia_racecar import NvidiaRacecar<br/>import time<br/>import sys<br/><br/>car = NvidiaRacecar()<br>time.sleep(5)<br/>car.steering_gain = -0.65<br/>car.steering_offset = -0.25<br/>if car.steering_offset != -0.25 : exit()<br/>",
+    "Avancer" => "car.throttle = -0.5",
+    "Reculer" => "car.throttle = 0.5",
+    "S'arrêter" => "car.throttle = 0",
+    "Tourner à gauche" => "car.steering = 1",
+    "Tourner à droite" => "car.steering = -1",
+    "Tout droit" => "car.steering = 0",
+    "Attendre 1 seconde" => "time.sleep(1)",
+    "Fin" => "<br/>sys.exit('Fin du programme')",
 ];
 
 $nb_emplacements = 5;
 
-$file = '/home/jetson/Desktop/KDesir_Tests/projet.py';
+//$file = '/home/jetson/Desktop/KDesir_Tests/projet.py';
+$file = '/KDesir_Tests/projet.py';
 ?>
 
 <body>
@@ -81,6 +86,13 @@ $file = '/home/jetson/Desktop/KDesir_Tests/projet.py';
 			$myfile = fopen($file, "w");
 			fwrite($myfile, $output);
 			fclose($myfile);
+
+			//$command = escapeshellcmd('python3 /KDesir_Tests/projet.py');
+			//$output = shell_exec($command);
+			//echo $output;
+			//$outputshell = exec("gedit /KDesir_Tests/projet.py");
+			//$outputshell = exec("python3 /KDesir_Tests/projet.py");
+			//echo "<pre>$outputshell</pre>";
 		}
 	?>
     
