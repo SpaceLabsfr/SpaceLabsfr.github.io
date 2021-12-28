@@ -73,8 +73,6 @@
         height: 160px;
     }
     
-    img {}
-    
     .contentimg {
         width: 100%;
         display: flex;
@@ -115,7 +113,9 @@
         display: flex;
         justify-content: center;
         background: rgba(10, 10, 10, 0.8);
+        max-width: 1200px;
         padding: 40px;
+        border-radius: 30px;
     }
     
     .solutioncontent {
