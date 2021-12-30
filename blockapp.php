@@ -87,21 +87,8 @@ $file = '/KDesir_Tests/projet.py';
 			fwrite($myfile, $output);
 			fclose($myfile);
 
-			echo shell_exec('sudo /KDesir_Tests/./job.sh 2>&1');
-			//print_r($data);
-
-			//$output = null;
-			//$retval = null;
-			//exec('whoami', $output, $retval);
-			//echo "Return with status $retval and output:\n";
-			//print_r($output);
-
-			//$command = escapeshellcmd('python3 /KDesir_Tests/projet.py');
-			//$output = shell_exec($command);
-			//echo $output;
-			//$outputshell = exec("gedit /KDesir_Tests/projet.py");
-			//$outputshell = exec("python3 /KDesir_Tests/projet.py");
-			//echo "<pre>$outputshell</pre>";
+			shell_exec('sudo python3 /KDesir_Tests/projet.py');
+			//echo shell_exec('sudo python3 /KDesir_Tests/projet.py 2>&1'); //for debug
 		}
 	?>
     
