@@ -24,7 +24,7 @@
 // Définition des paramètres PHP 
 
 $actions = [
-    "Démarrer" => "from jetracer.nvidia_racecar import NvidiaRacecar<br/>import time<br/>import sys<br/><br/>car = NvidiaRacecar()<br>time.sleep(5)<br/>car.steering_gain = -0.65<br/>car.steering_offset = -0.25<br/>if car.steering_offset != -0.25 : exit()<br/>",
+    "Démarrer" => "from jetracer.nvidia_racecar import NvidiaRacecar<br/>import time<br/>import sys<br/><br/>car = NvidiaRacecar()<br>time.sleep(1)<br/>car.steering_gain = -0.65<br/>car.steering_offset = -0.25<br/>if car.steering_offset != -0.25 : exit()<br/>",
     "Avancer" => "car.throttle = -0.5",
     "Reculer" => "car.throttle = 0.5",
     "S'arrêter" => "car.throttle = 0",
@@ -86,6 +86,15 @@ $file = '/KDesir_Tests/projet.py';
 			$myfile = fopen($file, "w");
 			fwrite($myfile, $output);
 			fclose($myfile);
+
+			echo shell_exec('sudo /KDesir_Tests/./job.sh 2>&1');
+			//print_r($data);
+
+			//$output = null;
+			//$retval = null;
+			//exec('whoami', $output, $retval);
+			//echo "Return with status $retval and output:\n";
+			//print_r($output);
 
 			//$command = escapeshellcmd('python3 /KDesir_Tests/projet.py');
 			//$output = shell_exec($command);
