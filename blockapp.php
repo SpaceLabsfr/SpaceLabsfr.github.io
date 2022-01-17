@@ -5,7 +5,6 @@
     <link rel="stylesheet" type="text/css" href="common.css">
     <link rel="stylesheet" type="text/css" href="app_content.css">
 
-    <script src='jquery-3.2.1.min.js'></script>
     <script src='http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.js'></script>
     <script type="text/javascript">
 
@@ -73,7 +72,7 @@ $file = '/KDesir_Tests/projet.py';
     <br/><br/>
     <button class="submit" onclick="generate()">Valider</button>
 
-    <form method="post">
+    <form method="post" action="/#"> <!-- action="/#" pour empêcher de re-exécuter lorsqu'on rafraîchit -->
         <br/><input type="submit" name="sauvegarder" value="Exécuter" >
     </form>
 
@@ -147,7 +146,13 @@ $file = '/KDesir_Tests/projet.py';
 
         var origin_id = ev.dataTransfer.getData("Origin")
     
-        // On empêche de drop si le parent a un élément qui existe déjà!
+        if (!ev.target.id || ev.target.childNodes[0].nodeName == "#text") {
+            // Si on drop pas dans une case prévue à cet effet...
+            console.log("Oups, vous n'avez pas posé le block dans un emplacement valide !");
+            // Exemple : La croix, ou une case avec un block, ou un block
+            return false;
+        }
+
         //console.log(ev.target.parentNode.childElementCount)
         //console.log(src)
         //console.log(origin_id)

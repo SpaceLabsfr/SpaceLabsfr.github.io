@@ -6,8 +6,7 @@
     <link rel="stylesheet" type="text/css" href="common.css">
     <link rel="stylesheet" type="text/css" href="app_content.css">
 </head>
-<script src='jquery-3.2.1.min.js'></script>
-<script src='http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.js'></script>
+<script type="text/javascript" src='http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.js'></script>
 
 <script type="text/javascript">
     function addBlock(myId) {
@@ -112,12 +111,18 @@
 
         var origin_id = ev.dataTransfer.getData("Origin")
 
+        if (!ev.target.id || ev.target.childNodes[0].nodeName == "#text") {
+            // Si on drop pas dans une case prévue à cet effet...
+            console.log("Oups, vous n'avez pas posé le block dans un emplacement valide !");
+            // Exemple : La croix, ou une case avec un block, ou un block
+            return false;
+        }
+
         // On empêche de drop si le parent a un élément qui existe déjà!
         //console.log(ev.target.parentNode.childElementCount)
         //console.log("src " + src)
         //console.log("origin_id" + origin_id)
         //console.log("ev.target.id : " + ev.target.id)
-        //console.log(ev.target.childElementCount)
         if (ev.target.childElementCount == 1) {
             var copy = document.getElementById(src).cloneNode(true);
             copy.id = copy.id + "-copy";
