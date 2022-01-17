@@ -72,7 +72,7 @@ $file = '/KDesir_Tests/projet.py';
     <br/><br/>
     <button class="submit" onclick="generate()">Valider</button>
 
-    <form method="post" action="/#"> <!-- action="/#" pour empêcher de re-exécuter lorsqu'on rafraîchit -->
+    <form method="post"> <!-- action="/#" pour empêcher de re-exécuter lorsqu'on rafraîchit -->
         <br/><input type="submit" name="sauvegarder" value="Exécuter" >
     </form>
 
