@@ -74,7 +74,7 @@ $file = '/KDesir_Tests/projet.py';
     <button class="submit" onclick="generate()">Valider</button>
 
     <form method="post">
-        <br/><input type="submit" name="sauvegarder" value="Générer le fichier python" >
+        <br/><input type="submit" name="sauvegarder" value="Exécuter" >
     </form>
 
 	<?php 
