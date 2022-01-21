@@ -27,8 +27,9 @@ $actions = [
     "Avancer" => array(1,9,"s","car.throttle = -0.5;<br/> time.sleep(VAR)"),
     "Reculer" => array(1,9,"s","car.throttle = 0.5;<br/> time.sleep(VAR)"),
     "S'arrêter" => array(null,null,null,"car.throttle = VAR"),
-    "Tourner à gauche" => array(0,180,"°","car.steering = VAR/180"),
-    "Tourner à droite" => array(0,180,"°","car.steering = -VAR/180"),
+    "Tourner à gauche" => array(null, null, null,"car.steering = 0.3"),
+    "Tourner à droite" => array(null, null, null,"car.steering = -0.3"),
+    "Tourner" => array(-180,180,"°","car.steering = VAR/180"),
     "Attendre" => array(1,9,"s","time.sleep(VAR)"),
     "Fin" => array(null,null,null,"<br/>sys.exit('Fin du programme')"),
 ];
@@ -53,7 +54,7 @@ $file = '/KDesir_Tests/projet.py';
             <p class="action"><?= $key ?>
             <?php
             if($value[0] != null){
-                echo '<input type="number" min="'.$value[0].'" max=".'$value[1].'" value="1">'.$value[2];
+                echo '<input type="number" min="'.$value[0].'" max="'.$value[1].'" value="1">'.$value[2];
             }
             ?>
             </p>
@@ -187,11 +188,13 @@ $file = '/KDesir_Tests/projet.py';
 
     function generate() {
         actions_list = [] // liste des actions voulues
-        actions = document.getElementById("trame");
+        var actions = <?php echo json_encode($actions); ?>; // Récupération de la liste des actions possibles en PHP
 
         element = document.getElementsByClassName('bloc')
         //console.log(element)
         //console.log("element.length" + element.length)
+        output = ""; // Code Python à ressortir
+
 
         for (var i = 0; i < element.length; i++) {
             //console.log(element[i]) // Liste des actions prises
@@ -201,35 +204,36 @@ $file = '/KDesir_Tests/projet.py';
 
             for (var j = 0; j < children.length; j++) {
                 if (children[j].className == 'drag') {
-                    console.log(children[j].textContent);
-                    //actions_list.push(children[j].id)
-                    text = children[j].textContent;
-                    action = text.split("<")[0]; // On prend tout jusqu'au input s'il existe
-                    action= action.trim(); // Retire les premiers et derniers espaces
+                    action = children[j].textContent.trim();
+
+                    //console.log(action.split(" ").slice(-1)[0]);
+                    if(action.split(" ").splice(-1)[0].length == 1){ // Si on a un espace
+                        value = children[j].childNodes[1].childNodes[1].value; // La valeur dans l'input
+                        //console.log("Valeur:",value);
+
+                        //actions_list.push(children[j].id)
+                        text = children[j].textContent;
+                        action = text.trim();
+                        action = action.split(" ")[0];
+                        //console.log(action);
+                    }
+                    else{ 
+                        value = null;
+                    }
                     
-                    
+                    console.log(action)
+                    PythonScript = actions[action][3];
+                    PythonScript = PythonScript.replace("VAR",value);
+
+                    output += PythonScript;            
+                    output += "<br/>";
 
                     //actions_list.push(text);
-
-
-
                 }
             }
         }
-
-        var actions = <?php echo json_encode($actions); ?>; // Récupération de la liste des actions possibles en PHP
-
-        output = ""; // Code Python à ressortir
-
-        actions_list.forEach(function(element) {
-            // element : texte de l'action choisie
-            // actions[element], équivalent en code Python du texte
-            output += actions[element];
-            output += "<br/>";
-        })
-
+        
         document.getElementById("result").innerHTML = output;
-
         document.cookie="output="+output.toString();
     }
 
