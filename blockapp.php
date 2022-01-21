@@ -23,15 +23,14 @@
 // Définition des paramètres PHP 
 
 $actions = [
-    "Démarrer" => "from jetracer.nvidia_racecar import NvidiaRacecar<br/>import time<br/>import sys<br/><br/>car = NvidiaRacecar()<br>time.sleep(1)<br/>car.steering_gain = -0.65<br/>car.steering_offset = -0.25<br/>if car.steering_offset != -0.25 : exit()<br/>",
-    "Avancer" => "car.throttle = -0.5",
-    "Reculer" => "car.throttle = 0.5",
-    "S'arrêter" => "car.throttle = 0",
-    "Tourner à gauche" => "car.steering = 1",
-    "Tourner à droite" => "car.steering = -1",
-    "Tout droit" => "car.steering = 0",
-    "Attendre 1 seconde" => "time.sleep(1)",
-    "Fin" => "<br/>sys.exit('Fin du programme')",
+    "Démarrer" => array(null,null,null,"from jetracer.nvidia_racecar import NvidiaRacecar<br/>import time<br/>import sys<br/><br/>car = NvidiaRacecar()<br>time.sleep(1)<br/>car.steering_gain = -0.65<br/>car.steering_offset = -0.25<br/>if car.steering_offset != -0.25 : exit()<br/>"),
+    "Avancer" => array(1,9,"s","car.throttle = -0.5;<br/> time.sleep(VAR)"),
+    "Reculer" => array(1,9,"s","car.throttle = 0.5;<br/> time.sleep(VAR)"),
+    "S'arrêter" => array(null,null,null,"car.throttle = VAR"),
+    "Tourner à gauche" => array(0,180,"°","car.steering = VAR/180"),
+    "Tourner à droite" => array(0,180,"°","car.steering = -VAR/180"),
+    "Attendre" => array(1,9,"s","time.sleep(VAR)"),
+    "Fin" => array(null,null,null,"<br/>sys.exit('Fin du programme')"),
 ];
 
 $nb_emplacements = 5;
@@ -51,7 +50,13 @@ $file = '/KDesir_Tests/projet.py';
             $i++;
             ?>
         <div id=<?=$i?> class="drag" draggable="true" ondragstart="return dragStart(event)">
-            <p class="action"><?= $key ?></p>
+            <p class="action"><?= $key ?>
+            <?php
+            if($value[0] != null){
+                echo '<input type="number" min="'.$value[0].'" max=".'$value[1].'" value="1">'.$value[2];
+            }
+            ?>
+            </p>
         </div>
         <?php } ?>
     </div>
@@ -199,8 +204,15 @@ $file = '/KDesir_Tests/projet.py';
                     console.log(children[j].textContent);
                     //actions_list.push(children[j].id)
                     text = children[j].textContent;
-                    text = text.trim(); // Retire les premiers et derniers espaces
-                    actions_list.push(text);
+                    action = text.split("<")[0]; // On prend tout jusqu'au input s'il existe
+                    action= action.trim(); // Retire les premiers et derniers espaces
+                    
+                    
+
+                    //actions_list.push(text);
+
+
+
                 }
             }
         }

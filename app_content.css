@@ -19,7 +19,7 @@ body {
     background-color: rgba(0, 0, 0, 0.5);
     margin: 10px;
     border-radius: 20px;
-    width: 250px;
+    width: 260px;
     height: 65px;
     vertical-align: top;
 }
@@ -42,6 +42,18 @@ h3 {
 
 .drag {
     /*border: 2px green solid;*/
+}
+
+input[type=number] {
+    text-align: right;
+    width: 38px;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 .action {
