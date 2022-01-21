@@ -72,22 +72,23 @@ $file = '/KDesir_Tests/projet.py';
     <br/><br/>
     <button class="submit" onclick="generate()">Valider</button>
 
-    <form method="post"> <!-- action="/#" pour empêcher de re-exécuter lorsqu'on rafraîchit -->
+    <form method="POST" > <!-- action="/#" pour empêcher de re-exécuter lorsqu'on rafraîchit -->
         <br/><input type="submit" name="sauvegarder" value="Exécuter" >
     </form>
 
 	<?php 
-		if(isset($_POST["sauvegarder"])) {
+		if(isset($_POST['sauvegarder'])) {
 			//$file = '/home/jetson/Desktop/KDesir_Tests/projet.py';
 			$output = $_COOKIE['output'];
-            $output = str_replace("<br/>","\n",$output);
-            $output = str_replace("<br>","\n",$output);
+			$output = str_replace("<br/>","\n",$output);
+			$output = str_replace("<br>","\n",$output);
 			$myfile = fopen($file, "w");
 			fwrite($myfile, $output);
 			fclose($myfile);
 
 			shell_exec('sudo python3 /KDesir_Tests/projet.py');
 			//echo shell_exec('sudo python3 /KDesir_Tests/projet.py 2>&1'); //for debug
+			echo '<meta http-equiv="refresh" content="1; URL=blockapp.php" />';
 		}
 	?>
     
