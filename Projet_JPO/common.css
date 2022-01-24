@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+    font-family: Dubai, Helvetica, Arial, sans-serif;
+    font-size: 18px;
+}
+
+.title {
+    color: white;
+    text-align: center;
+    font-weight: normal;
+}
+
+a {
+    color: transparent;
+}
+
+button,
+input[type="submit"] {
+    cursor: pointer;
+    color: white;
+    background: rgba(0, 118, 255);
+    text-align: center;
+    display: block;
+    border-radius: 85px;
+    border-color: transparent;
+    width: 210px;
+    height: 36px;
+}
+
+button:hover {
+    transition: 0.5s;
+    background: rgba(0, 58, 155);
+}
