@@ -29,6 +29,7 @@ $actions = [
     "S'arrêter" => array(null,null,null,"car.throttle = 0.001<br/>car.throttle = 0"),
     "Tourner à gauche" => array(null, null, null,"car.steering = 0.3"),
     "Tourner à droite" => array(null, null, null,"car.steering = -0.3"),
+    "Reset direction" => array(null, null, null,"car.steering = 0.001<br/>car.steering = 0"),
     "Tourner" => array(-35,35,"°","car.steering = VAR/35"),
     "Attendre" => array(1,9,"s","time.sleep(VAR)"),
     "Fin" => array(null,null,null,"<br/>sys.exit('Fin du programme')"),
