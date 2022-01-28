@@ -11,7 +11,14 @@
 }
 
 a {
-    color: transparent;
+    color: purple;
+}
+
+#osm-map {
+    width: 600px;
+    height: 300px;
+    border: 1px black solid;
+    display: none;
 }
 
 button,
