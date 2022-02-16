@@ -4,12 +4,29 @@
     font-size: 18px;
 }
 
+body{
+    background-color: rgba(0,0,0,0.9)
+}
+
 .title {
     color: blue;
     text-align: center;
     font-weight: normal;
 }
 
+.top_menu{
+ 
+    border: solid white;
+    display: flex;
+    justify-content:space-around;
+}
+
+.bottom_menu{
+ 
+    border: solid red;
+    display: flex;
+    justify-content:space-around;
+}
 a {
     color: purple;
 }
@@ -27,10 +44,10 @@ input[type="submit"] {
     color: white;
     background: rgba(0, 118, 255);
     text-align: center;
-    display: block;
     border-radius: 85px;
     border-color: transparent;
-    width: 210px;
+    margin-bottom: 20px;
+    min-width : 110px;
     height: 36px;
 }
 
