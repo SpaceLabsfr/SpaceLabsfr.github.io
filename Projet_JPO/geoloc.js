@@ -70,7 +70,7 @@ function show() {
             attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
 
-        values = get_location()["Secen "];
+        values = get_location()["Kévin"];
 
         const latitude = values["latitude"];
         const longitude = values["longitude"];
@@ -87,7 +87,8 @@ function show() {
             element.style.display = 'block';
             // Target's GPS coordinates.
             var target = L.latLng(latitude_ITII, longitude_ITII);
-            var target2 = L.latLng(latitude_ITII - 0.0001, longitude_ITII + 0.0005);
+            //var target2 = L.latLng(latitude_ITII - 0.0001, longitude_ITII + 0.0005);
+            var target2 = L.latLng(latitude, longitude);
 
             // Set map's center to target with zoom 100.
             map.setView(target, 100);
@@ -95,11 +96,12 @@ function show() {
             // To personalize :  https://leafletjs.com/examples/quick-start/ 
 
             // Place a marker on the same location.
+
             L.marker(target).addTo(map)
-                .bindPopup('Kevin')
+                .bindPopup('Stand PERF-NI')
                 .openPopup();
             L.marker(target2).addTo(map)
-                .bindPopup('Valentin')
+                .bindPopup('Kévin')
                 .openPopup();
 
         }
