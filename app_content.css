@@ -25,7 +25,7 @@ body {
 }
 
 .section {
-    width: 80%;
+    width: 50%;
     margin: auto;
     border: gray 2px solid;
     background-color: rgba(0, 118, 220, 0.1);
