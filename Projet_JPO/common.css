@@ -12,6 +12,7 @@ body{
     color: blue;
     text-align: center;
     font-weight: normal;
+
 }
 
 .top_menu{
@@ -19,6 +20,12 @@ body{
     border: solid white;
     display: flex;
     justify-content:space-around;
+
+}
+
+.top_menu img{
+    width: 50px;
+    height: 50px;
 }
 
 .bottom_menu{
@@ -27,6 +34,47 @@ body{
     display: flex;
     justify-content:space-around;
 }
+
+.content{
+    border : solid orange;
+    display : flex;
+    justify-content:space-around;
+}
+
+.content img{
+    margin-left:12px;
+    width : 40%
+}
+
+.formation img {
+    border : solid white;
+    display: flex;
+    
+}
+
+.texte{
+    border : solid brown;
+    color : white;
+    width : 60%;
+}
+
+
+.texte .name{
+    display : flex;
+    justify-content:space-between;
+}
+
+h2 {
+    margin-top:5px;
+}
+
+
+p {
+    margin-top:0px;
+    margin-bottom:20px;
+    line-height:20px;
+}
+
 a {
     color: purple;
 }
