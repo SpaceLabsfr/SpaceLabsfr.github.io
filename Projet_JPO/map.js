@@ -27,6 +27,7 @@ function get_location() {
         return result;
     } else { return false; }
 }
+
 /*
 var ref = firebase.database().ref('/IPN/Kévin/longitude');
 ref.get().then((snapshot) => {
@@ -53,25 +54,27 @@ ref.get().then((snapshot) => {
          console.log("Error getting countries:", error);
      });
 */
+
 var element = document.getElementById('osm-map');
 var map = L.map(element);
 // To personalize :  https://leafletjs.com/examples/quick-start/ 
 
-// Add OSM tile layer to the Leaflet map.
-L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(map);
-
-
-
 var layerGroup = L.layerGroup().addTo(map);
-
 
 
 function show() {
 
+    // Add OSM tile layer to the Leaflet map.
+    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
     update_location();
 
+    setTimeout(function() {
+        update_location();
+    }, 300);
+    // Le délai permet de laisser la Firebase se connecter afin d'update les positions
 
     /*
     if (latitude && longitude) {
@@ -106,7 +109,7 @@ function update_location() {
     // remove all the markers in one go
     layerGroup.clearLayers();
 
-    document.getElementById("result").textContent = "Coordonnées : \n";
+    document.getElementById("result").innerHTML = "Coordonnées (altitude, latitude, longitude, temps) :<br/>";
 
     const latitude_ITII = 49.1082 + Math.floor(Math.random() / 10);
     const longitude_ITII = 1.4977 + Math.floor(Math.random() / 10);
@@ -126,30 +129,31 @@ function update_location() {
 
 
             // Place a marker on the location
-
             //L.marker(target).addTo(map)
             L.marker(target).addTo(layerGroup)
                 .bindPopup(person)
-                .openPopup();
         }
 
         values[person]["latitude"] = Math.round(values[person]["latitude"] * 100) / 100;
         values[person]["altitude"] = Math.round(values[person]["altitude"] * 100) / 100;
         values[person]["longitude"] = Math.round(values[person]["longitude"] * 100) / 100;
 
-        document.getElementById("result").textContent += person + " : (alt:" + values[person]["altitude"] + ", lat:" + values[person]["latitude"] + ", long:" + values[person]["longitude"] + ")";
+        document.getElementById("result").innerHTML += person + " :<br/>";
+        document.getElementById("result").innerHTML += " " + values[person]["altitude"] + " &nbsp; &nbsp; &nbsp; ";
+        document.getElementById("result").innerHTML += " " + values[person]["latitude"] + " &nbsp; &nbsp; &nbsp; ";
+        document.getElementById("result").innerHTML += " " + values[person]["longitude"] + " &nbsp; &nbsp; &nbsp; ";
+        document.getElementById("result").innerHTML += " " + values[person]["time"] + "<br/>";
 
         // Set map's center to target with zoom 100.
         map.setView(stand, 100);
 
-        L.marker(stand).addTo(map)
+        //L.marker(stand).addTo(map)
         L.marker(stand).addTo(layerGroup)
             .bindPopup('Stand PERF-NI')
-            .openPopup();
-
 
     });
 
+    document.getElementById("result").innerHTML += "</table>";
 }
 
 

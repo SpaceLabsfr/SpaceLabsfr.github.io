@@ -75,8 +75,7 @@ p {
 }
 
 #osm-map {
-    width: 600px;
-    height: 300px;
+    height: 320px;
     border: 1px black solid;
     display: none;
 }
