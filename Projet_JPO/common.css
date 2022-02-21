@@ -17,7 +17,7 @@ body{
 
 .top_menu{
  
-    border: solid white;
+    /*border: solid white;*/
     display: flex;
     justify-content:space-around;
 
@@ -30,13 +30,13 @@ body{
 
 .bottom_menu{
  
-    border: solid red;
+    /*border: solid red;*/
     display: flex;
     justify-content:space-around;
 }
 
 .content{
-    border : solid orange;
+    /*border : solid orange;*/
     display : flex;
     justify-content:space-around;
 }
@@ -46,14 +46,18 @@ body{
     width : 40%
 }
 
-.formation img {
+.formation img{
+    display : flex;
+    width : 90%
+}
+
+.etudiants{
     border : solid white;
-    display: flex;
-    
 }
 
 .texte{
-    border : solid brown;
+    /*border : solid brown;*/
+    margin-left:10px;
     color : white;
     width : 60%;
 }
