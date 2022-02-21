@@ -4,11 +4,8 @@
           <meta charset="UTF-8"/>
           <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
           <title> Foire aux questions </title>
-          <link
-           href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
-           rel="stylesheet"
-           />
-
+          <link   href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+           <link rel="stylesheet" type="text/css" href="common.css">
         <Style>
             details[open] {
                 background-color:lightslategrey
@@ -89,7 +86,7 @@
         <div class=" flex w-full justify-around  bg-cyan-100 dark:bg-gray-900 text-gray-900 dark:text-white py-5 ">
                 
         </div>
-        <form action="" class="my-20 p-10 max-w-xl mx-auto shadow-md sm:border-0 md:border md:border-gray-900 md:dark:border-gray-100 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100">
+        <form action="https://formspree.io/f/xnqlgodg" method="POST" class="my-20 p-10 max-w-xl mx-auto shadow-md sm:border-0 md:border md:border-gray-900 md:dark:border-gray-100 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100">
             <div class="mb-10">
                 <h1 class="font-bold text-4xl mb-3">Contactez nous </h1>
                 <p class="font-medium text-lg mb-5">Envoyez nous votre message, nous vous répondrons dans le plus bref délais </p>
@@ -110,11 +107,12 @@
                 <label for="email" class="text-lg flex justify-between items-end"><span>Mail</span><span class="text-xs text-red-500">Required</span></label>
                 <div class="mt-1 flex shadow-md">
                     <span class="inline-flex items-center px-3 rounded-none border border-r-0 border-gray-900 dark:border-gray-100"><i class="fas fa-envelope"></i></span>
-                    <input type="email" name="email" class="flex-1 block w-full sm:text-sm rounded-none border border-gray-900 dark:border-gray-100 bg-white dark:bg-gray-900">
+                    <input type="email" name="_replyto" class="flex-1 block w-full sm:text-sm rounded-none border border-gray-900 dark:border-gray-100 bg-white dark:bg-gray-900">
                 </div>
             </div>
             <div>
-                <button type="button" class="font-medium shadow-md rounded-none p-2 w-full focus:outline-none focus:ring-2 focus:ring-offset-2 border border-gray-900 dark:border-gray-100 bg-gray-800 dark:bg-gray-200 text-gray-200 dark:text-gray-800 hover:bg-gray-900 dark:hover:bg-gray-100"><i class="fas fa-check"></i> Send</button>
+                <input type="hidden" name="_next" value="confirm.html">
+                <p style="text-align:center;"><input type="submit" value="Envoyer la réponse" /></p> 
             </div>
         </form>
         
