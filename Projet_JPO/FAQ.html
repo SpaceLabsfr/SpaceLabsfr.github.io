@@ -1,130 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-          <meta charset="UTF-8"/>
-          <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-          <title> Foire aux questions </title>
-          <link   href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
-           <link rel="stylesheet" type="text/css" href="common.css">
-        <Style>
-            details[open] {
-                background-color:lightslategrey
-                
-            }
 
-        </Style>   
-    </head>
-      
-    <body>
- 
-      <div
-        class= "w-full h-screen bg-no-repeat bg-cover items-center bg-fixed  "
-        style="background-image: url('https://static.actu.fr/uploads/2019/04/25033-190423085121371-0.jpg');" > -->
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> Foire aux questions </title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="common.css">
+    <Style>
+        details[open] {
+            background-color: lightslategrey
+        }
+    </Style>
+</head>
 
-      </div>
-             
-        <div 
-        class="bg-white dark:bg-gray-900"
-        class="mt-16 max-w-3xl mx-auto space-y-6 px-6 sm:px-0">
-        
-          <h1 class="text-center text-4xl font-bold text-rgb(0 0 0)"> Foire aux questions </h1>
-          <div class="mt-10">
-              <details class="border-2 rounded">
-              <!-- La premiére question avec une réponse-->
-              <summary> <strong>Question 1</strong></summary>
-              <div class="pp-4 bg-gray-100 italic">
-                   Answer 1
-              </div>
-            
-              </details>
-           </div>
+<body>
+
+    <div class="dark:bg-gray-900" class="mt-16 max-w-3xl mx-auto space-y-6 px-6 sm:px-0">
+
+        <h1 class="text-center text-4xl font-bold text-white"> Foire aux questions </h1>
+
+
+        <div class="top_menu">
+
+            <a href="index.html">
+                <img src="img/white_house.jpg" />
+            </a>
+
+            <button onclick="window.location='Apprentis.html'"> Presentation des etudiants </button>
+
+            <a href="map.html">
+                <img src="img/location.jpg" />
+            </a>
+
+        </div>
+
+
+        <div class="bottom_menu">
+
+            <button onclick="window.location='FAQ.html'"> FAQ </button>
+            <button> Questionnaire </button>
+
+        </div>
+
 
         <div class="mt-10">
             <details class="border-2 rounded">
-            <!-- La premiére question avec une réponse-->
-            <summary><strong>Question 2</strong></summary>
-            <div class="pp-4 bg-gray-100 italic">
-                 Answer 2
-            </div>
-           </details>
+                <!-- La premiére question avec une réponse-->
+                <summary> <strong>Question 1</strong></summary>
+                <div>
+                    Answer 1
+                </div>
+
+            </details>
         </div>
 
-            <div class="mt-10">
-                <details class="border-2 rounded">
+        <div class="mt-10">
+            <details class="border-2 rounded">
+                <!-- La premiére question avec une réponse-->
+                <summary><strong>Question 2</strong></summary>
+                <div class="pp-4 bg-gray-100 italic">
+                    Answer 2
+                </div>
+            </details>
+        </div>
+
+        <div class="mt-10">
+            <details class="border-2 rounded">
                 <!-- La premiére question avec une réponse-->
                 <summary><strong>Question 3</strong></summary>
-                <div class="pp-4 bg-gray-100 italic">
-                     Answer 3
-                </div> 
-  
-                </details>
-            </div>
-        
-            <div class="mt-10">
-                <details class="border-2 rounded">
+                <div class="pp-4 text-white italic">
+                    Answer 3
+                </div>
+
+            </details>
+        </div>
+
+        <div class="mt-10">
+            <details class="border-2 rounded">
                 <!-- La premiére question avec une réponse-->
                 <summary><strong>Question 4</strong></summary>
                 <div class="pp-4 bg-gray-100 italic">
-                     Answer 4
+                    Answer 4
                 </div>
-               
-                </details>
-            </div>
 
-            <div class="mt-10">
-                <details class="border-2 rounded">
+            </details>
+        </div>
+
+        <div class="mt-10">
+            <details class="border-2 rounded">
                 <!-- La premiére question avec une réponse-->
                 <summary><strong>Question 5</strong></summary>
                 <div class="pp-4 bg-gray-100 italic">
-                     Answer 5
+                    Answer 5
                 </div>
-                </details>
-            </div>
-
-        </div>
-             
-        <div class=" flex w-full justify-around  bg-cyan-100 dark:bg-gray-900 text-gray-900 dark:text-white py-5 ">
-                
-        </div>
-        <form action="https://formspree.io/f/xnqlgodg" method="POST" class="my-20 p-10 max-w-xl mx-auto shadow-md sm:border-0 md:border md:border-gray-900 md:dark:border-gray-100 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100">
-            <div class="mb-10">
-                <h1 class="font-bold text-4xl mb-3">Contactez nous </h1>
-                <p class="font-medium text-lg mb-5">Envoyez nous votre message, nous vous répondrons dans le plus bref délais </p>
-                <hr class="border-gray-900 dark:border-gray-100">
-            </div>
-            <div class="mb-5">
-                <label for="message" class="text-lg flex justify-between items-end"><span>Message</span><span class="text-xs text-red-500">Required</span></label>
-                <textarea name="message" id="message" cols="30" rows="10" class="shadow-md mt-1 block w-full sm:text-sm rounded-none border-gray-900 dark:border-gray-100 bg-white dark:bg-gray-900"></textarea>
-            </div>
-            <div class="mb-5">
-                <label for="name" class="text-lg flex justify-between items-end"><span>Nom et prénom </span><span class="text-xs text-red-500 ">Required</span></label>
-                <div class="mt-1 flex shadow-md">
-                    <span class="inline-flex items-center px-3 rounded-none border border-r-0 border-gray-900 dark:border-gray-100"><i class="fas fa-user"></i></span>
-                    <input type="text" name="name" class="flex-1 block w-full sm:text-sm rounded-none border border-gray-900 dark:border-gray-100 bg-white dark:bg-gray-900">
-                </div>
-            </div>
-            <div class="mb-5">
-                <label for="email" class="text-lg flex justify-between items-end"><span>Mail</span><span class="text-xs text-red-500">Required</span></label>
-                <div class="mt-1 flex shadow-md">
-                    <span class="inline-flex items-center px-3 rounded-none border border-r-0 border-gray-900 dark:border-gray-100"><i class="fas fa-envelope"></i></span>
-                    <input type="email" name="_replyto" class="flex-1 block w-full sm:text-sm rounded-none border border-gray-900 dark:border-gray-100 bg-white dark:bg-gray-900">
-                </div>
-            </div>
-            <div>
-                <input type="hidden" name="_next" value="confirm.html">
-                <p style="text-align:center;"><input type="submit" value="Envoyer la réponse" /></p> 
-            </div>
-        </form>
-        
-            <div
-                class="bg-right-bottom h-screen bg-no-repeat"
-                style="background-image: url('https://www.itii-normandie.fr/wp-content/uploads/2020/01/favicon_Plan-de-travail-1.png'); background-size: 14rem 11rem">
-            </div>
-        </div>    
-          
+            </details>
         </div>
 
     </div>
-</div> 
-    </body>
-</html>  
+
+    <div class=" flex w-full justify-around  bg-cyan-100 dark:bg-gray-900 text-gray-900 dark:text-white py-5 ">
+
+    </div>
+    <form action="https://formspree.io/f/xnqlgodg" method="POST" class="my-20 p-10 max-w-xl mx-auto shadow-md sm:border-0 md:border md:border-gray-900 md:dark:border-gray-100 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100">
+        <div class="mb-10">
+            <h1 class="font-bold text-4xl mb-3">Si votre question n'apparaît pas, contactez nous :</h1>
+            <p class="font-medium text-lg mb-5">Envoyez nous votre message, nous vous répondrons dans les plus brefs délais </p>
+            <hr class="border-gray-900 dark:border-gray-100">
+        </div>
+        <div class="mb-5">
+            <label for="message" class="text-lg flex justify-between items-end"><span>Votre question</span><span class="text-xs text-red-500">Required</span></label>
+            <textarea name="message" id="message" cols="30" rows="2" class="shadow-md mt-1 block w-full sm:text-sm rounded-none border-gray-900 dark:border-gray-100 bg-white dark:bg-gray-900"></textarea>
+        </div>
+
+        <div class="mb-5">
+            <label for="email" class="text-lg flex justify-between items-end"><span>Votre mail (pour recevoir la réponse)</span><span class="text-xs text-red-500">Required</span></label>
+            <div class="mt-1 flex shadow-md">
+                <span class="inline-flex items-center px-3 rounded-none border border-r-0 border-gray-900 dark:border-gray-100"><i class="fas fa-envelope"></i></span>
+                <input type="email" name="_replyto" class="flex-1 block w-full sm:text-sm rounded-none border border-gray-900 dark:border-gray-100 bg-white dark:bg-gray-900">
+            </div>
+        </div>
+        <div>
+            <input type="hidden" name="_next" value="confirm.html">
+            <input type="submit" value="Envoyer la réponse" />
+        </div>
+    </form>
+
+    <div class="bg-right-bottom h-screen bg-no-repeat" style="background-image: url('https://www.itii-normandie.fr/wp-content/uploads/2020/01/favicon_Plan-de-travail-1.png'); background-size: 14rem 11rem">
+    </div>
+    </div>
+
+    </div>
+
+    </div>
+    </div>
+
+    <div class="w-full h-screen bg-no-repeat bg-cover items-center bg-fixed  " style="background-image: url('https://static.actu.fr/uploads/2019/04/25033-190423085121371-0.jpg');"> -->
+
+    </div>
+
+</body>
+
+</html>

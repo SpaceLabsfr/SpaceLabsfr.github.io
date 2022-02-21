@@ -70,10 +70,6 @@ var layerGroup = L.layerGroup().addTo(map);
 
 function show() {
 
-    // Where you want to render the map.
-
-    console.log(map)
-
     update_location();
 
 
@@ -107,17 +103,8 @@ function show() {
 
 function update_location() {
 
-
-
-    // create markers
-
     // remove all the markers in one go
     layerGroup.clearLayers();
-
-
-
-    console.log("Here:", L);
-
 
     document.getElementById("result").textContent = "Coordonnées : \n";
 
@@ -128,7 +115,7 @@ function update_location() {
     values = get_location();
 
     Object.keys(values).forEach((person) => {
-        console.log("here:", values[person]);
+        //console.log("here:", values[person]);
         if (values[person]["latitude"] && values[person]["longitude"]) {
 
             document.getElementById("bouton").style.display = 'none';
@@ -168,5 +155,4 @@ function update_location() {
 
 setInterval(function() {
     update_location();
-    console.log("reset");
 }, 5000);

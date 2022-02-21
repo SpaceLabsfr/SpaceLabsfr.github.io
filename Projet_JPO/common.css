@@ -4,82 +4,75 @@
     font-size: 18px;
 }
 
-body{
-    background-color: rgba(0,0,0,0.9)
+body {
+    background-color: rgba(0, 0, 0, 0.9)
 }
 
 .title {
     color: blue;
     text-align: center;
     font-weight: normal;
-
 }
 
-.top_menu{
- 
+.top_menu {
     /*border: solid white;*/
     display: flex;
-    justify-content:space-around;
-
+    justify-content: space-around;
 }
 
-.top_menu img{
+.top_menu img {
     width: 50px;
     height: 50px;
 }
 
-.bottom_menu{
- 
+.bottom_menu {
     /*border: solid red;*/
     display: flex;
-    justify-content:space-around;
+    justify-content: space-around;
 }
 
-.content{
+.content {
     /*border : solid orange;*/
-    display : flex;
-    justify-content:space-around;
+    display: flex;
+    justify-content: space-around;
 }
 
-.content img{
-    margin-left:12px;
-    width : 40%
+.content img {
+    margin-left: 12px;
+    width: 40%
 }
 
-.formation img{
-    display : flex;
-    width : 90%
+.formation img {
+    display: flex;
+    width: 90%
 }
 
-.etudiants{
-    border : solid white;
+.etudiants {
+    border: solid white;
 }
 
-.texte{
+.texte {
     /*border : solid brown;*/
-    margin-left:10px;
-    color : white;
-    width : 60%;
+    margin-left: 10px;
+    color: white;
+    width: 60%;
 }
 
-
-.texte .name{
-    display : flex;
-    justify-content:space-between;
+.texte .name {
+    display: flex;
+    justify-content: space-between;
 }
 
 h2 {
-    margin-top:5px;
+    margin-top: 5px;
 }
-
 
 p {
-    margin-top:0px;
-    margin-bottom:20px;
-    line-height:20px;
-    color : white;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    line-height: 20px;
+    color: white;
 }
-
 
 #osm-map {
     width: 600px;
@@ -97,8 +90,9 @@ input[type="submit"] {
     border-radius: 85px;
     border-color: transparent;
     margin-bottom: 20px;
-    min-width : 110px;
+    min-width: 110px;
     height: 36px;
+    padding: 5px;
 }
 
 button:hover {
