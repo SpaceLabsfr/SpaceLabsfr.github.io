@@ -11,6 +11,10 @@ body {
     background-size: cover;
 }
 
+a {
+    color: rgba(0, 118, 255);
+}
+
 .title {
     color: blue;
     text-align: center;
@@ -46,11 +50,11 @@ body {
 }
 
 .formation img {
-    margin-top:20px;
-    margin-bottom:20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     display: flex;
     width: 95%;
-    border-radius:50px;
+    border-radius: 50px;
 }
 
 .bloc_etudiants {

@@ -4,7 +4,8 @@
         background-size: cover;
     }
     
-    p {
+    p,
+    ul {
         color: white;
     }
     
@@ -15,21 +16,22 @@
         width: 300px;
     }
     
-    iframe{
+    iframe {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
     }
-
+    
     .video_wrapper {
-        display:flex;
-        justify-content:center;
+        display: flex;
+        justify-content: center;
         position: relative;
-        padding-bottom: 56.25%; /* 16:9, for an aspect ratio of 1:1 change to this value to 100% */ 
+        padding-bottom: 56.25%;
+        /* 16:9, for an aspect ratio of 1:1 change to this value to 100% */
     }
-
+    
     .sectioncontent {
         float: left;
         width: 100%;
@@ -44,7 +46,6 @@
     }
     
     .spacelabsmainlogo {
-        width: 20%;
         max-width: 600px;
         float: left;
         text-align: center;
