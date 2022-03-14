@@ -44,12 +44,17 @@ body {
 
 .formation img {
     display: flex;
-    width: 90%
+    width: 95%
 }
 
-.etudiants {
+.bloc_etudiants {
     border : solid rgba(0, 0, 0, 0);
     border-bottom-color: white;
+}
+
+.etudimage {
+    border : solid gray;
+    border-radius : 30px;
 }
 
 .texte {
