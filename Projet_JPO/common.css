@@ -46,6 +46,7 @@ body {
 }
 
 .formation img {
+    margin-top:10px;
     display: flex;
     width: 95%;
     border-radius:50px;
