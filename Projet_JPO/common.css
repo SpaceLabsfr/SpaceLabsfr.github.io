@@ -47,7 +47,8 @@ body {
 
 .formation img {
     display: flex;
-    width: 95%
+    width: 95%;
+    border-radius:50px;
 }
 
 .bloc_etudiants {
