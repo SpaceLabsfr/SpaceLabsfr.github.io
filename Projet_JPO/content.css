@@ -1,0 +1,69 @@
+	body {
+	    background-image: url('img/GenericBackground.jpg');
+	    background-repeat: no-repeat;
+	    background-size: cover;
+	}
+	
+	.Logo {
+	    display: flex;
+	    justify-content: center;
+	    width: 100%;
+	    text-align: center;
+	}
+	
+	.Flow {
+	    overflow: auto;
+	    width: auto;
+	    text-align: center;
+	}
+	
+	.Tocent {
+	    width: 100%;
+	    text-align: center;
+	}
+	
+	.JPOLogo {
+	    width: 70%;
+	    max-width: 800px;
+	    text-align: center;
+	    padding: 0px;
+	}
+	
+	.PERFNI {
+	    float: center;
+	    max-width: 700px;
+	    font-weight: lighter;
+	    padding: 0 20px;
+	    color: white;
+	    text-align: center;
+	    background-color: transparent;
+	    border-radius: 45px;
+	    border-color: transparent;
+	    font-family: 'Helvetica';
+	}
+	
+	am {
+	    color: rgba(105, 50, 168);
+	    font-style: normal;
+	    font-weight: bold;
+	    font-size: inherit;
+	}
+	
+	.pdfimg {
+	    width: 4%;
+	    align-items: center;
+	    vertical-align: middle;
+	}
+	
+	.bouton {
+	    cursor: pointer;
+	    font-size: 1.25rem;
+	    padding: 5px;
+	    border: 20px solid rgba(0, 0, 0, 0.1);
+	    border-radius: 5px;
+	    background-color: rgb(100, 20, 140);
+	    color: white;
+	    align-items: center;
+	    vertical-align: middle;
+	    text-align: center;
+	}
