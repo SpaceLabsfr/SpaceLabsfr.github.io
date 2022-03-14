@@ -50,6 +50,7 @@ body {
 .bloc_etudiants {
     border : solid rgba(0, 0, 0, 0);
     border-bottom-color: white;
+    margin-bottom:10px;
 }
 
 .etudimage {
