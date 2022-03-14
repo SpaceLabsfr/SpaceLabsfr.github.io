@@ -1,7 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\img",
+    "\\img\\Equipe",
+    "\\Projet_JPO",
+    "\\Projet_JPO\\img"
   ],
-  "SelectedNode": "\\blockapp.php",
+  "SelectedNode": "\\Projet_JPO\\img",
   "PreviewInSolutionExplorer": false
 }
