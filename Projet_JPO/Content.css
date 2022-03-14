@@ -50,8 +50,9 @@
 	}
 	
 	.pdfimg {
-		width: 2.5%;
+		width: 4%;
 		align-items: center;
+		vertical-align: middle;
 	}
 	
 	.bouton{
@@ -63,4 +64,6 @@
 		background-color: rgb(100,20,140);
 		color: white;
 		align-items: center;
+		vertical-align: middle;
+		text-align: center;
 	}
