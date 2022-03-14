@@ -24,12 +24,13 @@
 
 $actions = [
     "Démarrer" => array(null,null,null,"from jetracer.nvidia_racecar import NvidiaRacecar<br/>import time<br/>import sys<br/><br/>car = NvidiaRacecar()<br>time.sleep(1)<br/>car.steering_gain = -0.65<br/>car.steering_offset = -0.25<br/>if car.steering_offset != -0.25 : exit()<br/>"),
-    "Avancer" => array(1,9,"s","car.throttle = -0.5;<br/> time.sleep(VAR)"),
-    "Reculer" => array(1,9,"s","car.throttle = 0.5;<br/> time.sleep(VAR)"),
-    "S'arrêter" => array(null,null,null,"car.throttle = VAR"),
-    "Tourner à gauche" => array(null, null, null,"car.steering = 0.3"),
-    "Tourner à droite" => array(null, null, null,"car.steering = -0.3"),
-    "Tourner" => array(-180,180,"°","car.steering = VAR/180"),
+    "Avancer" => array(1,9,"s","car.throttle = -0.5<br/>time.sleep(VAR)"),
+    "Reculer" => array(1,9,"s","car.throttle = 0.5<br/>time.sleep(VAR)"),
+    "S'arrêter" => array(null,null,null,"car.throttle = 0.001<br/>car.throttle = 0"),
+    "Tourner à gauche" => array(null, null, null,"car.steering = 1"),
+    "Tourner à droite" => array(null, null, null,"car.steering = -1"),
+    "Reset direction" => array(null, null, null,"car.steering = 0.001<br/>car.steering = 0"),
+    "Tourner" => array(-35,35,"°","car.steering = VAR/35"),
     "Attendre" => array(1,9,"s","time.sleep(VAR)"),
     "Fin" => array(null,null,null,"<br/>sys.exit('Fin du programme')"),
 ];
