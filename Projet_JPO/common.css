@@ -48,7 +48,8 @@ body {
 }
 
 .etudiants {
-    border: solid white;
+    border : solid rgba(0, 0, 0, 0);
+    border-bottom-color: white;
 }
 
 .texte {
@@ -88,9 +89,8 @@ input[type="submit"] {
     text-align: center;
     border-radius: 85px;
     border-color: transparent;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     min-width: 110px;
-    height: 36px;
     padding: 5px;
 }
 
