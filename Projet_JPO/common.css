@@ -114,3 +114,7 @@ button:hover {
     transition: 0.5s;
     background: rgba(0, 58, 155);
 }
+
+.texte p {
+    font-size: 14px;
+}
