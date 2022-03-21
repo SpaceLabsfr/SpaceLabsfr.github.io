@@ -159,4 +159,4 @@ function update_location() {
 
 setInterval(function() {
     update_location();
-}, 5000);
+}, 3000);
