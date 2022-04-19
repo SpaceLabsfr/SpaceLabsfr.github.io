@@ -57,6 +57,7 @@
 	
 	.texte .pdfimg {
 	    width: 10%;
+		height : 25px;
 	    align-items: center;
 	    vertical-align: middle;
 	    display: inline;
