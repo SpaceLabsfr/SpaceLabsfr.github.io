@@ -20,13 +20,15 @@
 	.Tocent {
 	    width: 100%;
 	    text-align: center;
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
 	}
-	
-	.JPOLogo {
-	    width: 70%;
-	    max-width: 800px;
-	    text-align: center;
-	    padding: 0px;
+
+	.Tocent img {
+		width: 40%;
+		max-width: 300px;
+		height: 40%;
 	}
 	
 	.PERFNI {
@@ -78,7 +80,7 @@
 	.bouton:hover {
 	    background-color: rgb(72, 11, 102);
 	}
-	
+
 	.contacts {
 		border-style:solid;
 		border-color:rgb(100, 20, 140);
