@@ -1,124 +1,132 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="common.css">
+    <head>
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="content.css">
+        <link rel="stylesheet" type="text/css" href="common.css">
 
-    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
-    <link href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" rel="stylesheet" />
-    <!--
-    <script type="text/javascript module">
-        // Import the functions you need from the SDKs you need
-        import {
-            initializeApp
-        } from "https://www.gstatic.com/firebasejs/9.6.5/firebase-app.js";
-        // TODO: Add SDKs for Firebase products that you want to use
-        // https://firebase.google.com/docs/web/setup#available-libraries
+        <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+        <link href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" rel="stylesheet" />
+        <!--
+        <script type="text/javascript module">
+            // Import the functions you need from the SDKs you need
+            import {
+                initializeApp
+            } from "https://www.gstatic.com/firebasejs/9.6.5/firebase-app.js";
+            // TODO: Add SDKs for Firebase products that you want to use
+            // https://firebase.google.com/docs/web/setup#available-libraries
 
-        // Your web app's Firebase configuration
-        const firebaseConfig = {
-        };
+            // Your web app's Firebase configuration
+            const firebaseConfig = {
+            };
 
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
+            // Initialize Firebase
+            const app = initializeApp(firebaseConfig);
 
-        console.log(app);
-    </script>
-    <script type="text/javascript module">
-        import {
-            initializeApp
-        } from 'firebase/app';
-        import {
-            getFirestore, collection, getDocs
-        } from 'firebase/firestore/lite';
-        // Follow this pattern to import other Firebase services
-        // import { } from 'firebase/<service>';
+            console.log(app);
+        </script>
+        <script type="text/javascript module">
+            import {
+                initializeApp
+            } from 'firebase/app';
+            import {
+                getFirestore, collection, getDocs
+            } from 'firebase/firestore/lite';
+            // Follow this pattern to import other Firebase services
+            // import { } from 'firebase/<service>';
 
-        // TODO: Replace the following with your app's Firebase project configuration
-        const firebaseConfig = {
-            //...
-        };
+            // TODO: Replace the following with your app's Firebase project configuration
+            const firebaseConfig = {
+                //...
+            };
 
-        const app = initializeApp(firebaseConfig);
-        const db = getFirestore(app);
+            const app = initializeApp(firebaseConfig);
+            const db = getFirestore(app);
 
-        // Get a list of cities from your database
-        async function getCities(db) {
-            console.log(db);
-            const citiesCol = collection(db, 'cities');
-            const citySnapshot = await getDocs(citiesCol);
-            const cityList = citySnapshot.docs.map(doc => doc.data());
-            console.log(cityList);
-            return cityList;
-        }
-        getCities(db);
-    </script>
-    -->
-</head>
+            // Get a list of cities from your database
+            async function getCities(db) {
+                console.log(db);
+                const citiesCol = collection(db, 'cities');
+                const citySnapshot = await getDocs(citiesCol);
+                const cityList = citySnapshot.docs.map(doc => doc.data());
+                console.log(cityList);
+                return cityList;
+            }
+            getCities(db);
+        </script>
+        -->
+    </head>
 
-<body onload="show();">
+    <body onload="show();">
 
-    <div class="top_menu">
+        <div class="top_menu">
 
-        <a href="index.html">
-            <img src="img/White_house.png" />
-        </a>
+            <a href="index.html">
+                <img src="img/White_house.png" />
+            </a>
 
-        <button onclick="window.location='apprentis.html'"> Presentation des etudiants </button>
+            <button onclick="window.location='apprentis.html'"> Presentation des etudiants </button>
 
-        <a href="map.html">
-            <img src="img/location.jpg" />
-        </a>
+            <a href="map.html">
+                <img src="img/location.jpg" />
+            </a>
 
-    </div>
-
-
-    <div class="bottom_menu">
-
-        <button onclick="window.location='faq.html'"> FAQ </button>
-        <button onclick="window.location='questionnaire.html'"> Questionnaire </button>
-
-    </div>
+        </div>
 
 
-    <p>Géolocalisation des intervenants de la formation <a href="apprentis.html">Performance Numérique Industrielle</a></p>
+        <div class="bottom_menu">
 
-    <button id="bouton" onclick=show()>Afficher la carte</button>
+            <button onclick="window.location='faq.html'"> FAQ </button>
+            <button onclick="window.location='questionnaire.html'"> Questionnaire </button>
 
-    <div id="osm-map"></div>
+        </div>
 
-    <p><span id="result"></span></p>
 
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#config-web-app -->
+        <p>Géolocalisation des intervenants de la formation <a href="apprentis.html">Performance Numérique Industrielle</a></p>
 
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+        <button id="bouton" onclick=show()>Afficher la carte</button>
 
-    <script>
-        // Initialize Firebase
-        var firebaseConfig = {
-            apiKey: "AIzaSyDSD76uLxU3504iPKuwa1qCu-b5wzSwUuo",
-            authDomain: "geolocjpo.firebaseapp.com",
-            databaseURL: "https://geolocjpo-default-rtdb.europe-west1.firebasedatabase.app/", //"https://geolocjpo-default-rtdb.europe-west1.firebaseio.com/",
-            projectId: "geolocjpo",
-            storageBucket: "geolocjpo.appspot.com",
-            messagingSenderId: "581599498874",
-            appId: "1:581599498874:web:ace7d1efe037f35262e1c3"
-        };
-        firebase.initializeApp(firebaseConfig);
-    </script>
+        <div id="osm-map"></div>
 
-    <script type="text/javascript">
-        function show() {
-            const latitude = get_location()["Coucou"]["latitude"];
-            const longitude = get_location()["Coucou"]["longitude"];
-        }
-    </script>
+        <p><span id="result"></span></p>
 
-    <script type="text/javascript" src="map.js"></script>
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#config-web-app -->
 
-</body>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+        <script>
+            // Initialize Firebase
+            var firebaseConfig = {
+                apiKey: "AIzaSyDSD76uLxU3504iPKuwa1qCu-b5wzSwUuo",
+                authDomain: "geolocjpo.firebaseapp.com",
+                databaseURL: "https://geolocjpo-default-rtdb.europe-west1.firebasedatabase.app/", //"https://geolocjpo-default-rtdb.europe-west1.firebaseio.com/",
+                projectId: "geolocjpo",
+                storageBucket: "geolocjpo.appspot.com",
+                messagingSenderId: "581599498874",
+                appId: "1:581599498874:web:ace7d1efe037f35262e1c3"
+            };
+            firebase.initializeApp(firebaseConfig);
+        </script>
+
+        <script type="text/javascript">
+            function show() {
+                const latitude = get_location()["Coucou"]["latitude"];
+                const longitude = get_location()["Coucou"]["longitude"];
+            }
+        </script>
+
+        <script type="text/javascript" src="map.js"></script>
+        
+        <footer class="main-footer" >
+            <div class="fin">
+                Projet imaginé et développé par l'équipe SpaceLabs JPO !
+                <img src="img/SpaceLabs_White_JPO_HD_sans_fond.png" class="JPOlogo">
+            </div>
+        </footer>
+        
+    </body>
 
 </html>

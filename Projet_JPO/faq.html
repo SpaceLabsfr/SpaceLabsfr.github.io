@@ -1,143 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title> Foire aux questions </title>
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="common.css">
-    <Style>
-        details[open] {
-            background-color: rgba(105, 50, 168, 0.5)
-        }
-    </Style>
-</head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title> Foire aux questions </title>
+        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+        <link rel="stylesheet" type="text/css" href="content.css">
+        <link rel="stylesheet" type="text/css" href="common.css">
+        <Style>
+            details[open] {
+                background-color: rgba(105, 50, 168, 0.5)
+            }
+        </Style>
+    </head>
 
-<body>
+    <body>
 
-    <div class="dark:bg-gray-900" class="mt-16 max-w-3xl mx-auto space-y-6 px-6 sm:px-0" style="padding-top:10px;">
+        <div class="dark:bg-gray-900" class="mt-16 max-w-3xl mx-auto space-y-6 px-6 sm:px-0" style="padding-top:10px;">
 
-        <div class="top_menu">
+            <div class="top_menu">
 
-            <a href="index.html">
-                <img src="img/White_house.png" />
-            </a>
+                <a href="index.html">
+                    <img src="img/White_house.png" />
+                </a>
 
-            <button onclick="window.location='apprentis.html'"> Presentation des etudiants </button>
+                <button onclick="window.location='apprentis.html'"> Presentation des etudiants </button>
 
-            <a href="map.html">
-                <img src="img/location.jpg" />
-            </a>
+                <a href="map.html">
+                    <img src="img/location.jpg" />
+                </a>
 
-        </div>
-
-
-        <div class="bottom_menu">
-
-            <button onclick="window.location='faq.html'"> FAQ </button>
-            <button onclick="window.location='questionnaire.html'"> Questionnaire </button>
-
-        </div>
-
-
-        <div class="mt-7">
-            <details class="border-2 rounded text-white ">
-                <!-- La premiére question avec une réponse-->
-                <summary> <strong>Quels sont les rôles de l'ITII et de l'INSA ? </strong></summary>
-
-                <div class="pp-4 bg-black italic ">
-                    L'INSA propose la maquette des cours, met à disposition certains de ses formateurs et valide le fonctionnement pédagogique, notamment les syllabus. L'INSA facture à l'ITII l'intervention de leurs formateurs. L'ITII accueille les apprentis sur son site.
-                    Il gére les cours, les plannings, les examens, les soutenance, les absences et les frais de déplacement. Il assure le suivi des apprentis en entreprise et assure leur suivi quotidien (bien-étre).
-                </div>
-
-            </details>
-        </div>
-
-        <div class="mt-7">
-            <details class="border-2 rounded text-white">
-                <!-- La premiére question avec une réponse-->
-                <summary><strong>Quelle est la différence entre "SMART FACTORY" et "MANUFACTORING" ?  </strong></summary>
-                <div class=" pp-4 bg-black italic ">
-                    Le contenu de la spécialité "SMART FACTORY" est : Informatique, Automatisme, IoT-EoT-IoT-Cloud computing, Systèmes d'information, Systèmes à évènements discrets, Imagerie-Vision, Cybersécurité, Communication-Connectivité-Mobilité et outils, Sûreté de
-                    fonctionnement, Maintenance prédictive. Le contenu de la spécialité "MANIFACTORING" est : Automates programmables, Mécanique, Ingénierie des systèmes de fabrication, Mécatronique-Robotique, CAO-CFAO-Réalité virtuelle, Cobotique-Robotique
-                    mobile, Imagerie-Vision, Fabrication additive, Sécurité, Gestion de production. Le contenu commun à ces deux spécialités est : Mathématiques, Modélisation physique, Ingénierie des systèmes électriques, Probabilités Statistiques, Systèmes
-                    mécaniques et énergétiques. Algorithme-Programmation, Communication et réseaux, Base de données, Traitement du signal et de l'image, Systèmes embarqués.
-
-
-
-
-
-                </div>
-            </details>
-        </div>
-
-        <div class="mt-7">
-            <details class="border-2 rounded text-white">
-                <!-- La premiére question avec une réponse-->
-                <summary><strong> Pourquoi une formation en alternance ?</strong></summary>
-                <div class="pp-4 bg-black italic ">
-                    Une formation en alternance permet d'associer théorie et pratique, permet d'intégrer une entreprise et de transformer des cours en une réalité professionnelle. L'alternance permet d'enrichir son CV avec des missions suivies en entreprise et pour lesquelles
-                    le tuteur a été un "formateur" professionnel. L'alternance permet de recevoir un salaire pour étre plus autonome.
-                </div>
-
-            </details>
-        </div>
-
-        <div class="mt-7">
-            <details class="border-2 rounded text-white ">
-                <!-- La premiére question avec une réponse-->
-                <summary><strong>Quel est le rythme d'alternance ?</strong></summary>
-                <div class="pp-4 bg-black italic">
-                    Le rythme d'alternance pour les IPN est de 15 jours à l'école et de 15 jours en entreprise.
-                </div>
-
-            </details>
-        </div>
-
-        <div class="mt-7">
-            <details class="border-2 rounded text-white ">
-                <!-- La premiére question avec une réponse-->
-                <summary><strong> Quel type de lien entretenez-vous avec les entreprises ? </strong></summary>
-                <div class="pp-4 bg-black italic">
-                    Les tuteurs de la formation et de l'entreprise communiquent entre eux par des reunions, par le site internet des apprentis Caliel, et aussi lors de chaque soutenance.
-                </div>
-            </details>
-        </div>
-
-
-    </div>
-
-    <!--<div class=" flex w-full justify-around  bg-cyan-100 dark:bg-gray-900 text-gray-900 dark:text-white py-5 ">
-
-    </div>-->
-    <form action="https://formspree.io/f/xnqlgodg" method="POST" class="my-20 p-10 max-w-xl mx-auto shadow-md sm:border-0 md:border md:border-gray-900 md:dark:border-gray-100 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100">
-        <div class="mb-10">
-            <h1 class="font-bold text-4xl mb-3">Si votre question n'apparaît pas, contactez nous :</h1>
-            <p class="font-bold text-black mb-5  ">Envoyez nous votre message, nous vous répondrons dans les plus brefs délais. </p>
-            <hr class="border-gray-900 dark:border-gray-100">
-        </div>
-        <div class="mb-5">
-            <label for="message" class="text-lg flex justify-between items-end"><span>Votre question</span><span class="text-xs text-red-500"></span></label>
-            <textarea name="message" id="message" cols="30" rows="2" class="shadow-md mt-1 block w-full sm:text-sm rounded-none border-gray-900 dark:border-gray-100 bg-white dark:bg-gray-900"></textarea>
-        </div>
-
-        <div class="mb-5">
-            <label for="email" class="text-lg flex justify-between items-end"><span>Votre adresse mail (pour recevoir la réponse)</span><span class="text-xs text-red-500"></span></label>
-            <div class="mt-1 flex shadow-md">
-                <span class="inline-flex items-center px-3 rounded-none border border-r-0 border-gray-900 dark:border-gray-100"><i class="fas fa-envelope"></i></span>
-                <input type="email" name="_replyto" class="flex-1 block w-full sm:text-sm rounded-none border border-gray-900 dark:border-gray-100 bg-white dark:bg-gray-900">
             </div>
-        </div>
-        <div>
-            <input type="hidden" name="_next" value="confirm.html">
-            <input type="submit" value="Envoyer la réponse" />
-        </div>
-    </form>
 
-    <div class=" w-full h-screen bg-center bg-no-repeat  items-center bg-fixed  " style="background-image: url('https://static.actu.fr/uploads/2019/04/25033-190423085121371-0.jpg');">
-    </div>
 
-</body>
+            <div class="bottom_menu">
+
+                <button onclick="window.location='faq.html'"> FAQ </button>
+                <button onclick="window.location='questionnaire.html'"> Questionnaire </button>
+
+            </div>
+
+
+            <div class="mt-7">
+                <details class="border-2 rounded text-white ">
+                    <!-- La premiére question avec une réponse-->
+                    <summary> <strong>Quels sont les rôles de l'ITII et de l'INSA ? </strong></summary>
+
+                    <div class="pp-4 bg-black italic ">
+                        L'INSA propose la maquette des cours, met à disposition certains de ses formateurs et valide le fonctionnement pédagogique, notamment les syllabus. L'INSA facture à l'ITII l'intervention de leurs formateurs. L'ITII accueille les apprentis sur son site.
+                        Il gére les cours, les plannings, les examens, les soutenance, les absences et les frais de déplacement. Il assure le suivi des apprentis en entreprise et assure leur suivi quotidien (bien-étre).
+                    </div>
+
+                </details>
+            </div>
+
+            <div class="mt-7">
+                <details class="border-2 rounded text-white">
+                    <!-- La premiére question avec une réponse-->
+                    <summary><strong>Quelle est la différence entre "SMART FACTORY" et "MANUFACTORING" ?  </strong></summary>
+                    <div class=" pp-4 bg-black italic ">
+                        Le contenu de la spécialité "SMART FACTORY" est : Informatique, Automatisme, IoT-EoT-IoT-Cloud computing, Systèmes d'information, Systèmes à évènements discrets, Imagerie-Vision, Cybersécurité, Communication-Connectivité-Mobilité et outils, Sûreté de
+                        fonctionnement, Maintenance prédictive. Le contenu de la spécialité "MANIFACTORING" est : Automates programmables, Mécanique, Ingénierie des systèmes de fabrication, Mécatronique-Robotique, CAO-CFAO-Réalité virtuelle, Cobotique-Robotique
+                        mobile, Imagerie-Vision, Fabrication additive, Sécurité, Gestion de production. Le contenu commun à ces deux spécialités est : Mathématiques, Modélisation physique, Ingénierie des systèmes électriques, Probabilités Statistiques, Systèmes
+                        mécaniques et énergétiques. Algorithme-Programmation, Communication et réseaux, Base de données, Traitement du signal et de l'image, Systèmes embarqués.
+
+
+
+
+
+                    </div>
+                </details>
+            </div>
+
+            <div class="mt-7">
+                <details class="border-2 rounded text-white">
+                    <!-- La premiére question avec une réponse-->
+                    <summary><strong> Pourquoi une formation en alternance ?</strong></summary>
+                    <div class="pp-4 bg-black italic ">
+                        Une formation en alternance permet d'associer théorie et pratique, permet d'intégrer une entreprise et de transformer des cours en une réalité professionnelle. L'alternance permet d'enrichir son CV avec des missions suivies en entreprise et pour lesquelles
+                        le tuteur a été un "formateur" professionnel. L'alternance permet de recevoir un salaire pour étre plus autonome.
+                    </div>
+
+                </details>
+            </div>
+
+            <div class="mt-7">
+                <details class="border-2 rounded text-white ">
+                    <!-- La premiére question avec une réponse-->
+                    <summary><strong>Quel est le rythme d'alternance ?</strong></summary>
+                    <div class="pp-4 bg-black italic">
+                        Le rythme d'alternance pour les IPN est de 15 jours à l'école et de 15 jours en entreprise.
+                    </div>
+
+                </details>
+            </div>
+
+            <div class="mt-7">
+                <details class="border-2 rounded text-white ">
+                    <!-- La premiére question avec une réponse-->
+                    <summary><strong> Quel type de lien entretenez-vous avec les entreprises ? </strong></summary>
+                    <div class="pp-4 bg-black italic">
+                        Les tuteurs de la formation et de l'entreprise communiquent entre eux par des reunions, par le site internet des apprentis Caliel, et aussi lors de chaque soutenance.
+                    </div>
+                </details>
+            </div>
+
+
+        </div>
+
+        <!--<div class=" flex w-full justify-around  bg-cyan-100 dark:bg-gray-900 text-gray-900 dark:text-white py-5 ">
+
+        </div>-->
+        <form action="https://formspree.io/f/xnqlgodg" method="POST" class="my-20 p-10 max-w-xl mx-auto shadow-md sm:border-0 md:border md:border-gray-900 md:dark:border-gray-100 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100">
+            <div class="mb-10">
+                <h1 class="font-bold text-4xl mb-3">Si votre question n'apparaît pas, contactez nous :</h1>
+                <p class="font-bold text-black mb-5  ">Envoyez nous votre message, nous vous répondrons dans les plus brefs délais. </p>
+                <hr class="border-gray-900 dark:border-gray-100">
+            </div>
+            <div class="mb-5">
+                <label for="message" class="text-lg flex justify-between items-end"><span>Votre question</span><span class="text-xs text-red-500"></span></label>
+                <textarea name="message" id="message" cols="30" rows="2" class="shadow-md mt-1 block w-full sm:text-sm rounded-none border-gray-900 dark:border-gray-100 bg-white dark:bg-gray-900"></textarea>
+            </div>
+
+            <div class="mb-5">
+                <label for="email" class="text-lg flex justify-between items-end"><span>Votre adresse mail (pour recevoir la réponse)</span><span class="text-xs text-red-500"></span></label>
+                <div class="mt-1 flex shadow-md">
+                    <span class="inline-flex items-center px-3 rounded-none border border-r-0 border-gray-900 dark:border-gray-100"><i class="fas fa-envelope"></i></span>
+                    <input type="email" name="_replyto" class="flex-1 block w-full sm:text-sm rounded-none border border-gray-900 dark:border-gray-100 bg-white dark:bg-gray-900">
+                </div>
+            </div>
+            <div>
+                <input type="hidden" name="_next" value="confirm.html">
+                <input type="submit" value="Envoyer la réponse" />
+            </div>
+        </form>
+
+        <div class=" w-full h-screen bg-center bg-no-repeat  items-center bg-fixed  " style="background-image: url('https://static.actu.fr/uploads/2019/04/25033-190423085121371-0.jpg');">
+        </div>
+        <footer class="main-footer" >
+            <div class="fin">
+                Projet imaginé et développé par l'équipe SpaceLabs JPO !
+                <img src="img/SpaceLabs_White_JPO_HD_sans_fond.png" class="JPOlogo">
+            </div>
+        </footer>
+
+    </body>
 
 </html>
