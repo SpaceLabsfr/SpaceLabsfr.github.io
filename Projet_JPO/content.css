@@ -54,6 +54,15 @@
 	    align-items: center;
 	    vertical-align: middle;
 	}
+
+	.texte .pdfimg {
+	    width: 10%;
+	    align-items: center;
+	    vertical-align: middle;
+		display : inline;
+		margin-left : 0px;
+		margin-bottom : 5px;
+	}
 	
 	.bouton {
 	    cursor: pointer;
