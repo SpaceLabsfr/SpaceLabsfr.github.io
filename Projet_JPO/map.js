@@ -109,7 +109,7 @@ function update_location() {
     // remove all the markers in one go
     layerGroup.clearLayers();
 
-    document.getElementById("result").innerHTML = "Coordonnées (altitude, latitude, longitude, temps) :<br/>";
+    //document.getElementById("result").innerHTML = "Coordonnées (altitude, latitude, longitude, temps) :<br/>";
 
     const latitude_ITII = 49.1082 + Math.floor(Math.random() / 10);
     const longitude_ITII = 1.4977 + Math.floor(Math.random() / 10);
@@ -138,11 +138,13 @@ function update_location() {
         values[person]["altitude"] = Math.round(values[person]["altitude"] * 100) / 100;
         values[person]["longitude"] = Math.round(values[person]["longitude"] * 100) / 100;
 
+        /*
         document.getElementById("result").innerHTML += person + " :<br/>";
         document.getElementById("result").innerHTML += " " + values[person]["altitude"] + " &nbsp; &nbsp; &nbsp; ";
         document.getElementById("result").innerHTML += " " + values[person]["latitude"] + " &nbsp; &nbsp; &nbsp; ";
         document.getElementById("result").innerHTML += " " + values[person]["longitude"] + " &nbsp; &nbsp; &nbsp; ";
         document.getElementById("result").innerHTML += " " + values[person]["time"] + "<br/>";
+        */
 
         // Set map's center to target with zoom 100.
         map.setView(stand, 100);
@@ -153,7 +155,7 @@ function update_location() {
 
     });
 
-    document.getElementById("result").innerHTML += "</table>";
+    //document.getElementById("result").innerHTML += "</table>";
 }
 
 
