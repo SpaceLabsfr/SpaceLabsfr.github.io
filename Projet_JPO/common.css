@@ -13,6 +13,7 @@ body {
 
 a {
     color: rgba(0, 118, 255);
+    text-decoration: none;
 }
 
 .title {

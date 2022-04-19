@@ -78,3 +78,10 @@
 	.bouton:hover {
 	    background-color: rgb(72, 11, 102);
 	}
+	
+	.contacts {
+		border-style:solid;
+		border-color:rgb(100, 20, 140);
+		color: white;
+		text-align: center;
+	}
