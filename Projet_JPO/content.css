@@ -106,5 +106,7 @@
 		width: 15%;
 		max-width: 200px;
 		height: 15%;
+		max-height: 40px;
 		vertical-align: middle;
+		display: inline;
 	}
