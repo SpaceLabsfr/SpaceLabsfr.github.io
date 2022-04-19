@@ -50,18 +50,18 @@
 	}
 	
 	.pdfimg {
-	    width: 4%;
+	    height: 40px;
 	    align-items: center;
 	    vertical-align: middle;
 	}
-
+	
 	.texte .pdfimg {
 	    width: 10%;
 	    align-items: center;
 	    vertical-align: middle;
-		display : inline;
-		margin-left : 0px;
-		margin-bottom : 5px;
+	    display: inline;
+	    margin-left: 0px;
+	    margin-bottom: 5px;
 	}
 	
 	.bouton {
@@ -76,7 +76,7 @@
 	    vertical-align: middle;
 	    text-align: center;
 	}
-
+	
 	.bouton:hover {
-		background-color: rgb(72, 11, 102);
+	    background-color: rgb(72, 11, 102);
 	}
