@@ -14,15 +14,13 @@
 	.Tocent {
 	    width: 100%;
 	    text-align: center;
-		display: flex;
-		align-items: center;
-		justify-content: space-around;
+	    display: flex;
+	    align-items: center;
+	    justify-content: space-around;
 	}
-
+	
 	.Tocent img {
-		width: 40%;
-		max-width: 300px;
-		height: 40%;
+	    height: 40%;
 	}
 	
 	.PERFNI {
@@ -53,7 +51,7 @@
 	
 	.texte .pdfimg {
 	    width: 10%;
-		height : 25px;
+	    height: 25px;
 	    align-items: center;
 	    vertical-align: middle;
 	    display: inline;
@@ -74,39 +72,39 @@
 	.bouton:hover {
 	    background-color: rgb(72, 11, 102);
 	}
-
+	
 	.contacts {
-		border-style:solid;
-		border-color:rgb(100, 20, 140);
-		color: white;
-		text-align: center;
-		margin: 15px;
-		font-size: 15px;
-		margin-bottom: 30px;
+	    border-style: solid;
+	    border-color: rgb(100, 20, 140);
+	    color: white;
+	    text-align: center;
+	    margin: 15px;
+	    font-size: 15px;
+	    margin-bottom: 30px;
 	}
-
+	
 	.main-footer {
-		max-width: 100%;
-		color: #d8d8d8;
-		overflow: hidden;
-		text-align: center;	
-		align-items: center;
+	    max-width: 100%;
+	    color: #d8d8d8;
+	    overflow: hidden;
+	    text-align: center;
+	    align-items: center;
 	}
-
+	
 	.fin {
-		display: block;
-		margin-block-start: 0em;
-		margin-block-end: 0em;
-		margin-inline-start: 0px;
-		margin-inline-end: 0px;
-		font-size: 10px;
+	    display: block;
+	    margin-block-start: 0em;
+	    margin-block-end: 0em;
+	    margin-inline-start: 0px;
+	    margin-inline-end: 0px;
+	    font-size: 10px;
 	}
-
+	
 	.JPOlogo {
-		width: 15%;
-		max-width: 200px;
-		height: 15%;
-		max-height: 40px;
-		vertical-align: middle;
-		display: inline;
+	    width: 15%;
+	    max-width: 200px;
+	    height: 15%;
+	    max-height: 40px;
+	    vertical-align: middle;
+	    display: inline;
 	}
