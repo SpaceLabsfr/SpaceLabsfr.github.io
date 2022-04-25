@@ -102,7 +102,8 @@ button,
 input[type="submit"] {
     cursor: pointer;
     color: white;
-    background: rgba(0, 118, 255);
+    /*background: rgba(0, 118, 255);*/
+    background: rgba(142, 33, 148);
     text-align: center;
     border-radius: 85px;
     border-color: transparent;
@@ -113,7 +114,9 @@ input[type="submit"] {
 
 button:hover {
     transition: 0.5s;
-    background: rgba(0, 58, 155);
+    /*background: rgba(0, 58, 155);*/
+    /*background: rgba(175, 18, 128);*/
+    background: rgba(125, 18, 158);
 }
 
 .texte p {
