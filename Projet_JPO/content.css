@@ -37,7 +37,7 @@
 	}
 	
 	am {
-	    color: rgba(105, 50, 168);
+	    color: rgba(175, 18, 128);
 	    font-style: normal;
 	    font-weight: bold;
 	    font-size: inherit;
@@ -63,7 +63,7 @@
 	    padding: 5px;
 	    border: 8px solid rgba(0, 0, 0, 0.1);
 	    border-radius: 5px;
-	    background-color: rgb(100, 20, 140);
+	    background-color: rgb(175, 18, 128);
 	    align-items: center;
 	    display: flex;
 	    margin: auto;
@@ -75,7 +75,7 @@
 	
 	.contacts {
 	    border-style: solid;
-	    border-color: rgb(100, 20, 140);
+	    border-color: rgb(175, 18, 128);
 	    color: white;
 	    text-align: center;
 	    margin: 15px;

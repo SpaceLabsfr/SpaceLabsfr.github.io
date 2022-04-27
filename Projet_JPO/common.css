@@ -90,6 +90,7 @@ p {
     margin-bottom: 20px;
     line-height: 20px;
     color: white;
+    font-weight: bold;
 }
 
 #osm-map {
