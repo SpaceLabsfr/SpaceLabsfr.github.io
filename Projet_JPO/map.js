@@ -22,7 +22,7 @@ function get_location() {
 
         result = Object.assign({}, snapshot.val());
     });
-    console.log(result);
+    // console.log(result);
     if (result != []) {
         return result;
     } else { return false; }
